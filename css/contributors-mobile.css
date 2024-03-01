@@ -1,0 +1,533 @@
+/**
+ * Reset some basic elements
+ */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 374px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+
+/**
+     * Basic styling
+     */
+body {
+    font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #111;
+    background-color: rgb(1, 3, 20);
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/**
+     * Set `margin-bottom` to maintain vertical rhythm
+     */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+.highlight {
+    margin-bottom: 15px;
+}
+
+/**
+     * `main` element
+     */
+main {
+    display: block;
+    /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+/**
+     * Images
+     */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**
+     * Figures
+     */
+figure>img {
+    display: block;
+}
+
+/* figcaption {
+      font-size: 14px;
+    } */
+
+/**
+     * Lists
+     */
+ul,
+ol {
+    margin-left: .3rem;
+}
+
+li>ul,
+li>ol {
+    margin-bottom: 0;
+}
+
+/**
+     * Headings
+     */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+/**
+     * Links
+     */
+a {
+    color: #2a7ae2;
+    text-decoration: none;
+}
+
+/* 头部整体样式 */
+.header {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    border-bottom: 1px solid #232027;
+    position: relative;
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+.hdImgBox {
+    margin-left: .65rem;
+    width: 11rem;
+    height: 2.25rem;
+    margin-top: 2.5rem;
+}
+
+.hdLinks {
+    margin-top: 3.25rem;
+    margin-right: 1.2rem;
+    width: 1.8rem;
+    height: 1.45rem;
+    position: relative;
+}
+
+.tabItem {
+    position: absolute;
+    background-color: rgb(6, 42, 97);
+    left: -5.8rem;
+    top: 2.7rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+.tabItem::after {
+    content: '';
+    /* 伪元素内容为空 */
+    position: absolute;
+    /* 绝对定位 */
+    top: -0.55rem;
+    /* 与正方形的顶部对齐 */
+    right: 0.55rem;
+    /* 与正方形的右侧对齐 */
+    border-left: 0.55rem solid transparent;
+    /* 左边的透明边框 */
+    border-right: 0.55rem solid transparent;
+    /* 右边的透明边框 */
+    border-bottom: 0.55rem solid rgb(6, 42, 97);
+    /* 底部的白色边框，形成三角形 */
+    width: 0;
+    /* 宽度为0 */
+    height: 0;
+    /* 高度为0 */
+}
+
+.tabItem .tab {
+    width: 7.65rem;
+    height: 3.9rem;
+    line-height: 3.9rem;
+    color: #D8D8D8;
+    font-size: 1.4rem;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+.line {
+    width: 80%;
+    height: 0.1rem;
+    background-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, .5) 25%,
+            rgba(255, 255, 255, .5) 75%,
+            rgba(255, 255, 255, 0) 100%);
+    /* 为了显示在容器背景之上，需要设置透明边框 */
+    margin-left: 10%;
+}
+
+.dot {
+    height: 0.4rem;
+    width: 0.4rem;
+    background: #00F7FF;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.1rem;
+    top: calc(50% - 0.2rem)
+}
+
+.overlaynon-bnBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bnTitle {
+    opacity: 1;
+    padding: 0 3.6rem;
+    margin-top: 3.57rem;
+    margin-bottom: 1rem;
+    font-family: 苹方-简;
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 2.1rem;
+    text-align: center;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+}
+
+.bnText {
+    display: none;
+
+}
+
+.bnText-mobile {
+    opacity: 0.5;
+    /* width: 100%; */
+    padding: 0 4.85rem;
+    font-family: 苹方-简;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.8rem;
+    text-align: center;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+}
+
+/* Contributors单独页面样式 */
+.banner {
+    padding: 0 1.5rem;
+}
+
+.img-title {
+    height: 14.7rem;
+    margin-top: 2rem;
+    background-image: url("/assets/images/xingxing.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 2.4rem;
+}
+
+.not-fond {
+    height: 80vh;
+    width: 100%;
+    background-position: center top -7rem;
+}
+
+.fond-text {
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #FFFFFF;
+}
+
+.fond-textone {
+    margin-top: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+.fond-texttwo {
+    margin-top: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+
+
+.img-title span {
+    margin-bottom: .5rem;
+    color: #FFFFFF;
+    font-size: 2.4rem;
+}
+
+.data-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data-tab {
+    margin-top: -4rem;
+    width: 33rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.data-tab .active {
+    color: #FFFFFF;
+    position: relative;
+}
+
+.data-tab .active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.1rem;
+    left: 40%;
+    width: 2rem;
+    border-radius: .4rem;
+    height: .15rem;
+    background-image: linear-gradient(to right, #1937FF, #00F7FF);
+    /* 你希望的边框颜色 */
+}
+
+.data-select {
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0 2rem;
+    font-size: 1.4rem;
+    color: #7F818C;
+    cursor: default;
+    position: relative;
+}
+
+.data-select:not(:last-child):not(:nth-child(3)):before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1.05rem;
+    top: .52rem;
+    right: 0;
+    background-color: rgba(255, 255, 255, .3);
+    /* 右侧边框颜色 */
+}
+
+.data-select span {
+    display: inline-block;
+    height: .21rem;
+    margin-left: .67rem;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+}
+
+.data-select:hover {
+    color: #FFFFFF;
+}
+
+.data-content {
+    margin-top: -2rem;
+}
+
+.dc-text {
+    margin: 2rem 0;
+    font-size: 1.4rem;
+    color: #7F818C;
+}
+
+.table-box {
+    padding: 0 3rem .5rem 2.5rem;
+    border: none;
+    border-radius: 1rem;
+    margin: 2.5rem 0 2.5rem 0;
+    background-color: rgba(255, 255, 255, .08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rankingTable {
+    border: none;
+    border-collapse: collapse;
+    display: none;
+    width: 29.5rem;
+}
+
+.rankingTable thead {
+    padding: 0;
+    width: 29.5rem;
+    border-bottom: 0.01rem solid rgba(255, 255, 255, .1);
+
+}
+
+.rankingTable thead tr {
+    width: 29.5rem;
+    height: 5.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.rankingTable tbody tr {
+    width: 29.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.actives {
+    display: block;
+}
+
+.rankingTable th {
+    width: 5.25rem;
+    text-align: left;
+    /* border-collapse: collapse; */
+    border: none;
+    font-weight: Normal;
+    font-size: 1.05rem;
+    color: #FFFFFF;
+}
+
+.rankingTable th:nth-child(2) {
+    width: 15.3rem;
+    text-align: left;
+    /* border-collapse: collapse; */
+    border: none;
+    font-weight: Normal;
+    font-size: 1.05rem;
+    color: #FFFFFF;
+    white-space: nowrap;
+    /* 确保文本在同一行显示，不换行 */
+    overflow: hidden;
+    /* 隐藏超出容器的文本 */
+    text-overflow: ellipsis;
+    /* 使用省略号代替被截断的文本 */
+}
+
+.rankingTable th:last-child {
+    width: 6.25rem;
+    border: none;
+    font-weight: Normal;
+    font-size: 1.05rem;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+
+.rankingTable td:nth-child(1) {
+    width: 5.25rem;
+    text-align: left;
+    font-weight: Normal;
+    font-size: 1.05rem;
+    color: #C3C6D5;
+    border: none;
+    padding-top: 1.5rem;
+}
+
+.rankingTable td:nth-child(2) {
+    width: 15.3rem;
+    text-align: left;
+    font-weight: Normal;
+    font-size: 1.05rem;
+    color: #C3C6D5;
+    border: none;
+    padding-top: 1.5rem;
+    white-space: nowrap;
+    /* 确保文本在同一行显示，不换行 */
+    overflow: hidden;
+    /* 隐藏超出容器的文本 */
+    text-overflow: ellipsis;
+    /* 使用省略号代替被截断的文本 */
+}
+
+.rankingTable td:last-child {
+    width: 6.25rem;
+    text-align: right;
+    padding-top: 1.5rem;
+    font-weight: Normal;
+    font-size: 1.05rem;
+    color: #C3C6D5;
+    border: none;
+}

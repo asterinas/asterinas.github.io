@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/Asterinas icon (in blue).svg">
+    <link rel="stylesheet" href="/css/contributors.css" media="screen and (min-width: 769px)">
+    <link rel="stylesheet" href="/css/contributors-mobile.css" media="screen and (max-width: 768px)">
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="hdImgBox">
+            <img src="/assets/images/homeIcon.png" alt="img">
+        </div>
+        <div class="hdLink">
+            <div data-tab="1" class="tab">Home</div>
+            <div data-tab="2" class="tab" style="color:#fff">Blog<div class="dot"> </div>
+            </div>
+            <div data-tab="3" class="tab">Docs</div>
+        </div>
+        <div class="hdLinks">
+            <div style="cursor: pointer;">
+                <img src="/assets/images/navigation.jpg" alt="img">
+            </div>
+            <div class="tabItem" flot="false">
+                <div data-tab="1" class="tab">Home</div>
+                <div class="line"></div>
+                <div data-tab="2" class="tab">Blog
+                </div>
+                <div class="line"></div>
+                <div data-tab="3" class="tab">Docs</div>
+            </div>
+        </div>
+    </div>
+    <!-- 中心具体内容框 -->
+    <div class="banner">
+        <div class="img-title">
+            <span>
+                Contributors
+            </span>
+        </div>
+        <div class="data-box">
+            <div class="data-tab">
+                <div class="data-select active" data-tab="data1" data-time="so far">
+                    All Time
+                </div>
+                <div class="data-select" data-tab="data2" data-time="in the last year">
+                    Last Year
+                </div>
+                <div class="data-select" data-tab="data3" data-time="in the last six months">
+                    Last 6 Months
+                </div>
+                <div class="data-select" data-tab="data4" data-time="in the last three months">
+                    Last 3 Months
+                </div>
+                <div class="data-select" data-tab="data5" data-time="in the last month">
+                    Last Month
+                </div>
+            </div>
+            <div class="data-content">
+                <div class="dc-text">
+                    We have had <span id="span1"></span> individuals contribute to Asterinas <span id="span2">so far</span>. Thank you so much!
+                </div>
+                <div class="table-box">
+                    <table class="rankingTable actives" id="data1" border="1">
+                        <thead>
+                            <tr>
+                                <th >Ranks</th>
+                                <th >Names</th>
+                                <th>Contribution Scores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 表格数据将由JavaScript动态生成 -->
+                        </tbody>
+                    </table>
+                    <table class="rankingTable" id="data2" border="1">
+                        <thead>
+                            <tr>
+                                <th >Ranks</th>
+                                <th >Names</th>
+                                <th>Contribution Scores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 表格数据将由JavaScript动态生成 -->
+                        </tbody>
+                    </table>
+                    <table class="rankingTable" id="data3" border="1">
+                        <thead>
+                            <tr>
+                                <th >Ranks</th>
+                                <th >Names</th>
+                                <th>Contribution Scores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 表格数据将由JavaScript动态生成 -->
+                        </tbody>
+                    </table>
+                    <table class="rankingTable" id="data4" border="1">
+                        <thead>
+                            <tr>
+                                <th >Ranks</th>
+                                <th >Names</th>
+                                <th>Contribution Scores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 表格数据将由JavaScript动态生成 -->
+                        </tbody>
+                    </table>
+                    <table class="rankingTable" id="data5" border="1">
+                        <thead>
+                            <tr>
+                                <th >Ranks</th>
+                                <th >Names</th>
+                                <th>Contribution Scores</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 表格数据将由JavaScript动态生成 -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="dc-text">
+                    <span style="color: #FFFFFF;">The rule for contribution scores.</span> An individual earns one point
+                    for (1) every commit and (2) every one hundred lines of code changes that he or she contributes to
+                    any open-source projects under Asternas.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部样式框 -->
+    <div class="footer">
+        <!-- <div class="footer-content">
+            <div class="footer-img">
+                <a href="/">
+                    <img class="footer-imgOne" src="/assets/images/twitter.png" alt="img">
+                </a>
+                <a href="/">
+                    <img class="footer-imgTwo" src="/assets/images/flow.png" alt="img">
+                </a>
+                <a href="/">
+                    <img class="footer-imgTwo" src="/assets/images/photo.png" alt="img">
+                </a>
+                <a href="/">
+                    <img class="footer-imgThree" src="/assets/images/email.png" alt="img">
+                </a>
+            </div>
+            <div class="footer-title">
+                备案文案备案文案备案文案备案文案
+            </div>
+        </div> -->
+
+    </div>
+    </div>
+
+    <script>
+
+        var tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var tabId = this.getAttribute('data-tab');
+                if (tabId === '1') {
+                    window.location.href = '/index.html';
+                } else if (tabId === '2') {
+                    window.location.href = '/blog.html';
+                } else if (tabId === '3') {
+                    window.location.href = 'https://asterinas.github.io/book';
+                }
+            });
+
+        })
+
+
+        // 获取所有的选项卡头部和内容区域
+        const headers = document.querySelectorAll('.data-select');
+        const bodies = document.querySelectorAll('.rankingTable');
+        // 绑定点击事件
+        headers.forEach(header => {
+            header.addEventListener('click', function () {
+                // 移除所有选项卡头部和内容区域的active类
+                headers.forEach(h => h.classList.remove('active'));
+                bodies.forEach(b => b.classList.remove('actives'));
+
+                // 给当前点击的选项卡头部添加active类
+                this.classList.add('active');
+
+                // 根据data-tab属性找到对应的内容区域并添加active类
+                const activeTab = document.getElementById(this.dataset.tab);
+                activeTab.classList.add('actives');
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', function () {
+            let span1 = document.getElementById('span1');
+            span1.innerHTML = JSON.parse(localStorage.getItem('data1')).length;
+
+
+            let spanTwo = document.querySelectorAll('.data-select');
+            spanTwo.forEach((item, id) => {
+                item.addEventListener('click', function () {
+                    console.log(item.getAttribute('data-time'));
+                    let span = document.getElementById('span2');
+                    let tbody = document.querySelectorAll('tbody')[id].childNodes.length
+                    console.log(tbody);
+                    span1.innerHTML = tbody
+                    span.innerHTML = item.getAttribute('data-time')
+                })
+            })
+        })
+
+
+        function displayData(jsonData, data) {
+            let tbody = document.getElementById(data).getElementsByTagName('tbody')[0];
+            // 清除之前的表格内容
+            tbody.innerHTML = '';
+
+            // 遍历JSON数据并创建表格行
+            jsonData.forEach(function (item) {
+                let row = tbody.insertRow(); // 在tbody中插入一行
+                let cellRank = row.insertCell(); // 在行中插入单元格
+                let cellName = row.insertCell();
+                let cellContr = row.insertCell();
+
+                cellRank.innerHTML = item.rank ? item.rank : '-'; // 设置单元格的内容
+                cellName.innerHTML = item.name ? item.name : '-';
+                cellContr.innerHTML = item.score ? item.score : '-';
+            });
+        }
+
+        function linkAll() {
+            if (localStorage.getItem('data1')) {
+                displayData(JSON.parse(localStorage.getItem('data1')), 'data1', 'All Time'); // 调用 displayData 函数来展示数据
+            }
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/all_time.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    localStorage.setItem('data1', JSON.stringify(data))
+                    displayData(data, 'data1', 'All Time'); // 调用 displayData 函数来展示数据
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+
+        }
+
+        function linkYear() {
+            if (localStorage.getItem('data2')) {
+                displayData(JSON.parse(localStorage.getItem('data2')), 'data2', 'Last Year'); // 调用 displayData 函数来展示数据
+            }
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_year.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    localStorage.setItem('data2', JSON.stringify(data))
+
+                    displayData(data, 'data2', 'Last Year'); // 调用 displayData 函数来展示数据
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        }
+
+        function linkSix() {
+            if (localStorage.getItem('data3')) {
+                displayData(JSON.parse(localStorage.getItem('data3')), 'data3', 'Last 6 Months'); // 调用 displayData 函数来展示数据
+            }
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_6_months.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    localStorage.setItem('data3', JSON.stringify(data))
+
+                    displayData(data, 'data3', 'Last 6 Months'); // 调用 displayData 函数来展示数据
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        }
+
+        function linkThree() {
+            if (localStorage.getItem('data4')) {
+                displayData(JSON.parse(localStorage.getItem('data4')), 'data4', 'Last 3 Months'); // 调用 displayData 函数来展示数据
+            }
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_3_months.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    localStorage.setItem('data4', JSON.stringify(data))
+
+                    displayData(data, 'data4', 'Last 3 Months'); // 调用 displayData 函数来展示数据
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        }
+
+        function linkLast() {
+            if (localStorage.getItem('data5')) {
+                displayData(JSON.parse(localStorage.getItem('data5')), 'data5', 'Last Months'); // 调用 displayData 函数来展示数据
+            }
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_month.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    localStorage.setItem('data5', JSON.stringify(data))
+
+                    displayData(data, 'data5', 'Last Months'); // 调用 displayData 函数来展示数据
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        }
+
+        linkAll()
+
+        linkYear()
+
+        linkSix()
+
+        linkThree()
+
+        linkLast()
+
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const screenWidth = window.innerWidth;
+            const hdLink = document.querySelectorAll('.hdLink');
+            const hdLinks = document.querySelectorAll('.hdLinks');
+            console.log(screenWidth)
+            if (screenWidth > 768) {
+                console.log(111)
+                hdLink[0].style.display = 'flex';
+                hdLinks[0].style.display = 'none';
+            } else {
+                console.log(222)
+                hdLink[0].style.display = 'none';
+                hdLinks[0].style.display = 'block';
+            }
+
+            // 监听窗口大小变化事件
+            window.addEventListener('resize', function () {
+                const currentScreenWidth = window.innerWidth;
+                if (currentScreenWidth > 768) {
+                    hdLink[0].style.display = 'flex';
+                    hdLinks[0].style.display = 'none';
+                } else {
+                    hdLink[0].style.display = 'none';
+                    hdLinks[0].style.display = 'block';
+                }
+            })
+        });
+
+        const hdLinks = document.querySelectorAll('.hdLinks');
+        const tabItem = document.querySelectorAll('.tabItem');
+        hdLinks[0].addEventListener('click', function () {
+            if (tabItem[0].getAttribute('flot') === 'false') {
+                tabItem[0].style.display = 'block';
+                tabItem[0].setAttribute('flot', true);
+            } else {
+                tabItem[0].style.display = 'none';
+                tabItem[0].setAttribute('flot', 'false');
+            }
+        });
+
+        window.onclick = (event) => {
+            if (event.target !== tabItem[0] && event.target !== hdLinks[0].children[0].children[0]) {
+                tabItem[0].style.display = 'none';
+                tabItem[0].setAttribute('flot', 'false');
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

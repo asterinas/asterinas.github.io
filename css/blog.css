@@ -1,0 +1,509 @@
+/**
+ * Reset some basic elements
+ */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 1440px) {
+    /* 褰撻〉闈㈠搴﹀皬浜庢垨绛変簬1440px鏃讹紝搴旂敤浠ヤ笅鏍峰紡 */
+    html {
+        font-size: 75px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    /* 褰撻〉闈㈠搴﹀皬浜庢垨绛変簬960px鏃讹紝搴旂敤浠ヤ笅鏍峰紡 */
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    /* 褰撻〉闈㈠搴﹀皬浜庢垨绛変簬480px鏃讹紝搴旂敤浠ヤ笅鏍峰紡 */
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+
+    /* 褰撻〉闈㈠搴﹀ぇ浜�640px鏃讹紝搴旂敤浠ヤ笅鏍峰紡 */
+    html {
+        font-size: 100px;
+    }
+}
+
+
+
+/**
+   * Basic styling
+   */
+body {
+    font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #111;
+    background-color: rgb(1, 3, 20);
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/**
+   * Set `margin-bottom` to maintain vertical rhythm
+   */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+.highlight {
+    margin-bottom: 15px;
+}
+
+/**
+   * `main` element
+   */
+main {
+    display: block;
+    /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+/**
+   * Images
+   */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**
+   * Figures
+   */
+figure>img {
+    display: block;
+}
+
+/* figcaption {
+    font-size: 14px;
+  } */
+
+/**
+   * Lists
+   */
+ul,
+ol {
+    margin-left: .3rem;
+}
+
+li>ul,
+li>ol {
+    margin-bottom: 0;
+}
+
+/**
+   * Headings
+   */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+/**
+   * Links
+   */
+a {
+    color: #2a7ae2;
+    text-decoration: none;
+}
+
+/* 页面背景� */
+
+.tops {
+    width: 100%;
+    max-width: 19.2rem;
+    background-image: url("/assets/images/posts.png");
+    background-size: 75% 6.6rem;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
+/* 头部整体样式 */
+.header {
+    width: 100%;
+    height: 1.04rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #232027;
+    position: relative;
+    z-index: 1000;
+    justify-content: center;
+}
+
+.hdImgBox {
+    margin-left: -3.6rem;
+    width: 1.6rem;
+    height: 0.64rem;
+    margin-top: 0.3rem;
+}
+
+.hdLink {
+    margin-left: 2.07rem;
+    width: 4.68rem;
+    height: .64rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hdLink .tab {
+    width: 1rem;
+    height: 1.04rem;
+    text-align: center;
+    line-height: 1.04rem;
+    font-size: .22rem;
+    color: #7F818C;
+    cursor: pointer;
+    position: relative;
+}
+
+.tabA{
+    color: #7F818C;
+}
+
+.dot {
+    height: 0.1rem;
+    width: 0.1rem;
+    background: #00F7FF;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom: -0.05rem;
+    left: 0.45rem;
+    z-index: 1000;
+}
+
+/* 博客列表样式 */
+.banner {
+    width: 100%;
+    max-width: 19.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* background: rgba(255, 255, 255, .3); */
+}
+
+.content-container {
+    width: 100%;
+}
+
+/* blog下样式 */
+.blogTitle {
+    margin-top: 2.95rem;
+    font-family: 苹方-简;
+    font-size: .72rem;
+    font-weight: 600;
+    line-height: .72rem;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.blogContent {
+    width: 12rem;
+    max-width: 19.2rem;
+    margin: auto;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-family: 苹方-简;
+    font-size: .48rem;
+    font-weight: 600;
+    line-height: .48rem;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin-bottom: .4rem;
+}
+
+.blogSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.blogUl {
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blogLi {
+    width: 5.9rem;
+    height: 3.42rem;
+    border-radius: .2rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    margin-bottom: .2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.blogTime {
+    font-family: 苹方-简;
+    font-size: .4rem;
+    font-weight: 600;
+    line-height: .4rem;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.15);
+    margin-top: .4rem;
+    margin-left: .4rem;
+}
+
+.blogbom {
+    margin-top: .17rem;
+    margin-left: .4rem;
+    width: .3rem;
+    height: .02rem;
+    border-radius: .01rem;
+    background: #1937FF;
+}
+
+.blogText {
+    margin-top: .15rem;
+    margin-left: .4rem;
+    font-family: 苹方-简;
+    font-size: .3rem;
+    font-weight: 600;
+    line-height: .4rem;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    width: 5.1rem;
+    max-height: .8rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /* 用于限制在两行文本后显示省略号 */
+    max-height: 3rem;
+    /* 用于限制容器的最大高度，应为line-height的整数倍，这里设置为2行 */
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.blogBut {
+    display: flex;
+    font-size: .24rem;
+    font-weight: normal;
+    line-height: .36rem;
+    letter-spacing: 0px;
+    color: #7F818C;
+    margin-left: .4rem;
+    justify-content: space-between;
+    width: 5.1rem;
+    margin-top: .3rem;
+    margin-bottom: .4rem;
+    align-items: center;
+}
+
+.blogUrl {
+    display: block;
+    width: 2.3rem;
+    height: .6rem;
+    border-radius: .3rem;
+    opacity: 1;
+    background: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1973);
+    line-height: .62rem;
+    text-align: center;
+    color: #7F818C;
+}
+
+.blogUrl:hover {
+    color: #00F7FF;
+    background-clip: padding-box;
+    /* 背景只绘制到内边距 */
+    border: solid 1px transparent;
+    background: linear-gradient(270deg, rgba(0, 247, 255, 0.1) 0%, rgba(25, 55, 255, 0.1) 100%);
+    /* 设置透明边框 */
+    box-shadow: inset 0 0 0 1px rgba(0, 247, 255, 0.4971), inset 0 0 0 1px #1937FF;
+    /* inset 阴影模拟边框 */
+}
+
+
+/* 右侧样式框 */
+.ti-right {
+    width: 9.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2rem 0;
+}
+
+.ti-right-box {
+    display: none;
+    width: 9.2rem;
+    height: 100%;
+}
+
+.tb-introduce .ti-right .actives {
+    display: block;
+}
+
+.ti-right-content {
+    width: 9.2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ti-text {
+    width: 8.2rem;
+    font-size: .24rem;
+    color: #7F818C;
+}
+
+.ti-jump-title {
+    width: 8.2rem;
+    font-size: .24rem;
+    color: #7F818C;
+    margin-bottom: .2rem;
+}
+
+.ti-jump-title span {
+    font-size: .24rem;
+    color: #00F7FF;
+}
+
+.ti-jump-code {
+    background: rgba(255, 255, 255, .05);
+    width: 8.2rem;
+    height: 3.02rem;
+    border-radius: .08rem;
+    display: flex;
+    justify-content: start;
+}
+
+.ti-jump-code code {
+    font-size: .24rem;
+    color: #7F818C;
+    padding: .25rem .4rem;
+}
+
+.ti-jump-text {
+    width: 7.8rem;
+    height: .76rem;
+    background: rgba(255, 255, 255, .05);
+    border-radius: .08rem;
+    display: flex;
+    align-items: center;
+    padding: 0 .2rem;
+    font-size: .24rem;
+    color: #7F818C;
+}
+
+.acimg {
+    width: 7.6rem;
+    height: 4.22rem;
+}
+
+
+
+
+
+/* 搴曢儴鏍峰紡鎼缓 */
+.footer {
+    margin-top: 1.3rem;
+    width: 100%;
+    height: 1.76rem;
+    max-width: 19.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-img {
+    width: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-imgOne {
+    width: .25rem;
+    height: .2rem;
+}
+
+.footer-imgTwo {
+    width: .19rem;
+    height: .19rem;
+}
+
+.footer-imgThree {
+    width: .22rem;
+    height: .17rem;
+}
+
+.footer-title {
+    font-size: .18rem;
+    font-weight: normal;
+    line-height: .18rem;
+    text-align: right;
+    letter-spacing: 0px;
+
+    color: #7F818C;
+}

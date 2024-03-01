@@ -1,0 +1,763 @@
+/**
+ * Reset some basic elements
+ */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 374px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+/**
+     * Basic styling
+     */
+body {
+    font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #111;
+    background-color: rgb(1, 3, 20);
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/**
+     * Set `margin-bottom` to maintain vertical rhythm
+     */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+.highlight {
+    margin-bottom: 15px;
+}
+
+/**
+     * `main` element
+     */
+main {
+    display: block;
+    /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+/**
+     * Images
+     */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**
+     * Figures
+     */
+figure>img {
+    display: block;
+}
+
+/* figcaption {
+      font-size: 14px;
+    } */
+
+/**
+     * Lists
+     */
+ul,
+ol {
+    margin-left: .3rem;
+}
+
+li>ul,
+li>ol {
+    margin-bottom: 0;
+}
+
+/**
+     * Headings
+     */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+/**
+     * Links
+     */
+/**
+  * Links
+  */
+a {
+    color: #00F7FF;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #00F7FF;
+}
+
+a:hover {
+    color: #00F7FF;
+    text-decoration: underline;
+}
+
+.social-media-list a:hover {
+    text-decoration: none;
+}
+
+.social-media-list a:hover .username {
+    text-decoration: underline;
+}
+
+
+/* 头部整体样式 */
+.header {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #232027;
+}
+
+.hdImgBox {
+    margin-left: 0.649rem;
+    width: 11rem;
+    height: 2.75rem;
+    margin-top: 2.25rem;
+}
+
+.hdLinks {
+    margin-top: 3.25rem;
+    margin-right: 1.2rem;
+    width: 1.8rem;
+    height: 1.45rem;
+    position: relative;
+}
+
+.tabItem {
+    position: absolute;
+    background-color: rgb(6, 42, 97);
+    left: -6.1rem;
+    top: 2.7rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+.tabItem::after {
+    content: '';
+    /* 伪元素内容为空 */
+    position: absolute;
+    /* 绝对定位 */
+    top: -0.55rem;
+    /* 与正方形的顶部对齐 */
+    right: 0.55rem;
+    /* 与正方形的右侧对齐 */
+    border-left: 0.55rem solid transparent;
+    /* 左边的透明边框 */
+    border-right: 0.55rem solid transparent;
+    /* 右边的透明边框 */
+    border-bottom: 0.55rem solid rgb(6, 42, 97);
+    /* 底部的白色边框，形成三角形 */
+    width: 0;
+    /* 宽度为0 */
+    height: 0;
+    /* 高度为0 */
+}
+
+.tabItem .tab {
+    width: 7.65rem;
+    height: 3.9rem;
+    line-height: 3.9rem;
+    color: #D8D8D8;
+    font-size: 1.4rem;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.line {
+    width: 80%;
+    height: 0.1rem;
+    background-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, .5) 25%,
+            rgba(255, 255, 255, .5) 75%,
+            rgba(255, 255, 255, 0) 100%);
+    /* 为了显示在容器背景之上，需要设置透明边框 */
+    margin-left: 10%;
+}
+.dot {
+    height: 0.4rem;
+    width: 0.4rem;
+    background: #00F7FF;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.5rem;
+    top: calc(50% - 0.2rem)
+}
+
+/* 页面背景 */
+.tops {
+    width: 100%;
+    background-image: url("/assets/images/post-mobile.png");
+    background-size: 100% 18.538rem;
+    background-repeat: no-repeat;
+    background-position: center top -1.75rem;
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* background: rgba(255, 255, 255, .3); */
+}
+
+.content-container {
+    width: 100%;
+}
+
+header {
+    width: calc(100% - 3rem);
+    margin: auto;
+    margin-top: 4rem;
+    padding: 0 1.5rem;
+}
+
+h1 {
+    font-size: 2.1rem;
+    line-height: 2.7rem;
+    letter-spacing: 0px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 0px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    letter-spacing: 0px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.headertime,
+.headerauthor {
+    font-family: 苹方-简;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.8rem;
+    letter-spacing: 0px;
+    color: #7F818C;
+}
+
+main {
+    width: calc(100% - 3rem);
+    margin: auto;
+    margin-top: 1.75rem;
+    padding: 0 1.5rem;
+    color: #7F818C;
+}
+
+hr {
+    border: .05rem solid rgba(255, 255, 255, 0.1);
+    margin: 1rem 0;
+}
+
+p {
+    font-family: 苹方-简;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    color: #7F818C;
+    margin: 1rem 0;
+}
+
+ul {
+    margin: 1rem 2rem;
+    list-style: none;
+}
+
+ul li {
+    position: relative;
+    font-weight: normal;
+    font-size: 1.4rem;
+    color: #7F818C;
+    line-height: 1.8rem;
+}
+
+ul li::before {
+    content: '';
+    /* 创建一个点作为项目符号 */
+    background-image: linear-gradient(to left, #1937FF, #1937FF);
+    /* 设置点的大小 */
+    position: absolute;
+    /* 绝对定位，相对于父元素（li） */
+    left: -1rem;
+    /* 将点向左移动，以便它出现在文本前面 */
+    top: 0.8rem;
+    /* 定位到顶部 */
+    width: .4rem;
+    height: .4rem;
+    border-radius: .4rem;
+}
+
+blockquote {
+    margin: 1rem 0;
+    color: #7F818C;
+    padding-left: 2rem;
+    font-size: .18rem;
+    position: relative;
+}
+
+blockquote p {
+    line-height: 1.8rem;
+}
+
+blockquote::before {
+    content: '';
+    /* 设置点的颜色 */
+    font-size: .2rem;
+    /* 设置点的大小 */
+    position: absolute;
+    /* 绝对定位，相对于父元素（li） */
+    left: 0.95rem;
+    /* 将点向左移动，以便它出现在文本前面 */
+    top: 1rem;
+    width: .2rem;
+    height: 2.85rem;
+    border-radius: .3rem;
+    opacity: 0.5001;
+    background: #7F818C;
+}
+
+
+ol {
+    margin: 1rem 2.55rem;
+}
+
+ol li {
+    font-size: 1.4rem;
+    color: #7F818C;
+    line-height: 1.8rem;
+    font-weight: normal;
+}
+
+ol li ul {
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+
+/**
+ * Tables
+ */
+table {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: left;
+    color: #7F818C;
+    border-collapse: collapse;
+    border: .01rem solid rgba(255, 255, 255, 0.3);
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+table th,
+table td {
+    padding: 0.5rem 0.75rem;
+}
+
+table th {
+    background-color: #f0f0f0;
+    border: .05rem solid rgba(255, 255, 255, 0.3);
+    border-bottom-color: #c9c9c9;
+}
+
+table td {
+    border: .05rem solid rgba(255, 255, 255, 0.3);
+    font-size: 1.4rem;
+}
+
+
+p img {
+    width: 100%;
+    height: 20.8rem;
+    border-radius: 0.8845rem;
+}
+
+/* 底部 */
+.footer {
+    height: 8.8rem;
+}
+
+
+
+/**
+ * Syntax highlighting styles
+ */
+
+p .language-plaintext {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.highlight pre {
+    background: rgba(255, 255, 255, 0.06);
+    padding: .75rem 1.05rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+}
+
+
+.highlight span {
+    font-size: 1.4rem;
+}
+
+.highlight code {
+    font-size: 1.4rem;
+    white-space: pre-wrap;
+    /* 保留空白字符的同时允许换行 */
+    word-wrap: break-word;
+    /* 允许长单词在必要时断行 */
+    overflow-wrap: break-word;
+    /* 同上，确保兼容性 */
+}
+
+.highlight .c {
+    color: #998;
+    font-style: italic;
+}
+
+.highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2;
+}
+
+.highlight .k {
+    font-weight: bold;
+    color: #099;
+}
+
+.highlight .o {
+    font-weight: bold;
+}
+
+.highlight .cm {
+    color: #998;
+    font-style: italic;
+}
+
+.highlight .cp {
+    color: #999;
+    font-weight: bold;
+}
+
+.highlight .c1 {
+    color: #7F818C;
+}
+
+.highlight .cs {
+    color: #999;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.highlight .gd {
+    color: #000;
+    background-color: #fdd;
+}
+
+.highlight .gd .x {
+    color: #000;
+    background-color: #faa;
+}
+
+.highlight .ge {
+    font-style: italic;
+}
+
+.highlight .gr {
+    color: #a00;
+}
+
+.highlight .gh {
+    color: #999;
+}
+
+.highlight .gi {
+    color: #000;
+    background-color: #dfd;
+}
+
+.highlight .gi .x {
+    color: #000;
+    background-color: #afa;
+}
+
+.highlight .go {
+    color: #888;
+}
+
+.highlight .gp {
+    color: #555;
+}
+
+.highlight .gs {
+    font-weight: bold;
+}
+
+.highlight .gu {
+    color: #aaa;
+}
+
+.highlight .gt {
+    color: #a00;
+}
+
+.highlight .kc {
+    font-weight: bold;
+}
+
+.highlight .kd {
+    font-weight: bold;
+}
+
+.highlight .kp {
+    font-weight: bold;
+}
+
+.highlight .kr {
+    font-weight: bold;
+}
+
+.highlight .kt {
+    color: #458;
+    font-weight: bold;
+}
+
+.highlight .m {
+    color: #099;
+}
+
+.highlight .s {
+    color: #d14;
+}
+
+.highlight .na {
+    color: #008080;
+}
+
+.highlight .nb {
+    color: #0086B3;
+}
+
+.highlight .nc {
+    color: #458;
+    font-weight: bold;
+}
+
+.highlight .no {
+    color: #008080;
+}
+
+.highlight .ni {
+    color: #800080;
+}
+
+.highlight .ne {
+    color: #900;
+    font-weight: bold;
+}
+
+.highlight .nf {
+    color: #099;
+    font-weight: bold;
+}
+
+.highlight .nn {
+    color: #555;
+}
+
+.highlight .nt {
+    color: #000080;
+}
+
+.highlight .nv {
+    color: #008080;
+}
+
+.highlight .ow {
+    color: #099;
+    font-weight: bold;
+}
+
+.highlight .w {
+    color: #bbb;
+}
+
+.highlight .mf {
+    color: #099;
+}
+
+.highlight .mh {
+    color: #099;
+}
+
+.highlight .mi {
+    color: #099;
+}
+
+.highlight .mo {
+    color: #099;
+}
+
+.highlight .kn {
+    color: #099;
+}
+
+.highlight .sb {
+    color: #d14;
+}
+
+.highlight .sc {
+    color: #d14;
+}
+
+.highlight .sd {
+    color: #d14;
+}
+
+.highlight .s2 {
+    color: #d14;
+}
+
+.highlight .se {
+    color: #d14;
+}
+
+.highlight .sh {
+    color: #d14;
+}
+
+.highlight .si {
+    color: #d14;
+}
+
+.highlight .sx {
+    color: #d14;
+}
+
+.highlight .sr {
+    color: #009926;
+}
+
+.highlight .s1 {
+    color: #d14;
+}
+
+.highlight .ss {
+    color: #990073;
+}
+
+.highlight .bp {
+    color: #999;
+}
+
+.highlight .vc {
+    color: #008080;
+}
+
+.highlight .vg {
+    color: #008080;
+}
+
+.highlight .vi {
+    color: #008080;
+}
+
+.highlight .il {
+    color: #099;
+}
+
+/*# sourceMappingURL=main.css.map */

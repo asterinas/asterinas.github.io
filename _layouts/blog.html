@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/Asterinas icon (in blue).svg">
+  <link rel="stylesheet" href="/css/blog.css" media="screen and (min-width: 769px)">
+  <link rel="stylesheet" href="/css/blog-mobile.css" media="screen and (max-width: 768px)">
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="hdImgBox">
+      <img src="/assets/images/homeIcon.png" alt="img">
+    </div>
+    <div class="hdLink">
+      <div data-tab="1" class="tab">Home</div>
+      <div data-tab="2" class="tab" style="color:#fff">Blog
+        <div class="dot"></div>
+      </div>
+      <div data-tab="3" class="tab">Docs</div>
+    </div>
+    <div class="hdLinks">
+      <div style="cursor: pointer;">
+        <img src="/assets/images/navigation.jpg" alt="img">
+      </div>
+      <div class="tabItem" flot="false">
+        <div data-tab="1" class="tab">Home</div>
+        <div class="line"></div>
+        <div data-tab="2" class="tab" style="color:#fff;font-weight: 500;"><div class="dot"></div>Blog
+        </div>
+        <div class="line"></div>
+        <div data-tab="3" class="tab">Docs</div>
+      </div>
+    </div>
+  </div>
+  <div class="tops">
+    <div class="banner">
+      <div class="content-container">
+        <div data-content="2">
+          <div class="blogTitle">Posts</div>
+          <div class="blogContent">
+            {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+            {% for year in posts_by_year %}
+            <section>
+              <h2>{{ year.name }}</h2>
+              <div class="blogUl">
+                {% for post in year.items %}
+                <div class="blogLi">
+                  <div>
+                    <div class="blogTime">{{ post.date | date: "%b · %d" }}</div>
+                    <div class="blogbom"></div>
+                  </div>
+                  <div class="blogText">{{ post.title }}</div>
+                  <div class="blogBut">
+                    <span>By {{post.author}}</span>
+                    <a class="blogUrl" href="{{ post.url | relative_url }}">READ MORE</a>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </section>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <!-- <div class="footer-content">
+        <div class="footer-img">
+          <a href="/">
+            <img class="footer-imgOne" src="/assets/images/twitter.png" alt="img">
+          </a>
+          <a href="/">
+            <img class="footer-imgTwo" src="/assets/images/flow.png" alt="img">
+          </a>
+          <a href="/">
+            <img class="footer-imgTwo" src="/assets/images/photo.png" alt="img">
+          </a>
+          <a href="/">
+            <img class="footer-imgThree" src="/assets/images/email.png" alt="img">
+          </a>
+        </div>
+        <div class="footer-title">
+          备案文案备案文案备案文案备案文案
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</body>
+
+<script>
+  var tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var tabId = this.getAttribute('data-tab');
+      if (tabId === '1') {
+        window.location.href = '/index.html';
+      } else if (tabId === '2') {
+        window.location.href = '/blog.html';
+      } else if (tabId === '3') {
+        window.location.href = 'https://asterinas.github.io/book';
+      }
+    });
+  })
+
+  window.addEventListener('DOMContentLoaded', function () {
+    const screenWidth = window.innerWidth;
+    const hdLink = document.querySelectorAll('.hdLink');
+    const hdLinks = document.querySelectorAll('.hdLinks');
+    console.log(screenWidth)
+    if (screenWidth > 768) {
+      console.log(111)
+      hdLink[0].style.display = 'flex';
+      hdLinks[0].style.display = 'none';
+    } else {
+      console.log(222)
+      hdLink[0].style.display = 'none';
+      hdLinks[0].style.display = 'block';
+    }
+
+    // 监听窗口大小变化事件
+    window.addEventListener('resize', function () {
+      const currentScreenWidth = window.innerWidth;
+      if (currentScreenWidth > 768) {
+        hdLink[0].style.display = 'flex';
+        hdLinks[0].style.display = 'none';
+      } else {
+        hdLink[0].style.display = 'none';
+        hdLinks[0].style.display = 'block';
+      }
+    })
+  });
+
+  const hdLinks = document.querySelectorAll('.hdLinks');
+  const tabItem = document.querySelectorAll('.tabItem');
+  hdLinks[0].addEventListener('click', function () {
+    if (tabItem[0].getAttribute('flot') === 'false') {
+      tabItem[0].style.display = 'block';
+      tabItem[0].setAttribute('flot', true);
+    } else {
+      tabItem[0].style.display = 'none';
+      tabItem[0].setAttribute('flot', 'false');
+    }
+  });
+
+  window.onclick = (event) => {
+    if (event.target !== tabItem[0] && event.target !== hdLinks[0].children[0].children[0]) {
+      tabItem[0].style.display = 'none';
+      tabItem[0].setAttribute('flot', 'false');
+    }
+  }
+</script>
+
+</html>

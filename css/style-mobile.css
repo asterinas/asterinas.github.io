@@ -1,0 +1,887 @@
+/**
+ * Reset some basic elements
+ */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 374px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 540px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+
+
+/**
+    * Basic styling
+    */
+body {
+    font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #111;
+    background-color: rgb(1, 3, 20);
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/**
+    * Set `margin-bottom` to maintain vertical rhythm
+    */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+.highlight {
+    margin-bottom: 15px;
+}
+
+/**
+    * `main` element
+    */
+main {
+    display: block;
+    /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+/**
+    * Images
+    */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**
+    * Figures
+    */
+figure>img {
+    display: block;
+}
+
+/* figcaption {
+     font-size: 14px;
+   } */
+
+/**
+    * Lists
+    */
+ul,
+ol {
+    margin-left: .3rem;
+}
+
+li>ul,
+li>ol {
+    margin-bottom: 0;
+}
+
+/**
+    * Headings
+    */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+/**
+    * Links
+    */
+a {
+    color: #2a7ae2;
+    text-decoration: none;
+}
+
+/* 头部整体样式 */
+.header {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    border-bottom: 1px solid #232027;
+    position: relative;
+    z-index: 1000;
+    justify-content: space-between;
+}
+
+.hdImgBox {
+    margin-left: .65rem;
+    width: 11rem;
+    height: 2.25rem;
+    margin-top: 2.5rem;
+}
+
+.hdLinks {
+    margin-top: 3.25rem;
+    margin-right: 1.2rem;
+    width: 1.8rem;
+    height: 1.45rem;
+    position: relative;
+}
+
+.tabItem {
+    position: absolute;
+    background-color: rgb(6, 42, 97);
+    left: -5.8rem;
+    top: 2.7rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+.tabItem::after {
+    content: '';
+    /* 伪元素内容为空 */
+    position: absolute;
+    /* 绝对定位 */
+    top: -0.55rem;
+    /* 与正方形的顶部对齐 */
+    right: 0.55rem;
+    /* 与正方形的右侧对齐 */
+    border-left: 0.55rem solid transparent;
+    /* 左边的透明边框 */
+    border-right: 0.55rem solid transparent;
+    /* 右边的透明边框 */
+    border-bottom: 0.55rem solid rgb(6, 42, 97);
+    /* 底部的白色边框，形成三角形 */
+    width: 0;
+    /* 宽度为0 */
+    height: 0;
+    /* 高度为0 */
+}
+
+.tabItem .tab {
+    width: 7.65rem;
+    height: 3.9rem;
+    cursor: pointer;
+    line-height: 3.9rem;
+    color: #D8D8D8;
+    font-size: 1.4rem;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+}
+
+.line {
+    width: 80%;
+    height: 0.1rem;
+    background-image: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, .5) 25%,
+            rgba(255, 255, 255, .5) 75%,
+            rgba(255, 255, 255, 0) 100%);
+    /* 为了显示在容器背景之上，需要设置透明边框 */
+    margin-left: 10%;
+}
+
+.dot {
+    height: 0.4rem;
+    width: 0.4rem;
+    background: #00F7FF;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.1rem;
+    top: calc(50% - 0.2rem)
+}
+
+/* 页面背景 */
+
+.tops {
+    width: 100%;
+    background-image: url("/assets/images/ydbeijing.png");
+    background-size: 100% 39.5rem;
+    background-repeat: no-repeat;
+    background-position: center top -7rem;
+}
+.overlaynon-bnBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bnTitle {
+    opacity: 1;
+    padding: 0 3.6rem;
+    margin-top: 3.57rem;
+    margin-bottom: 1rem;
+    font-family: 苹方-简;
+    font-size: 2.1rem;
+    font-weight: 600;
+    line-height: 2.1rem;
+    text-align: center;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+}
+
+.bnText {
+    display: none;
+
+}
+
+.bnText-mobile {
+    opacity: 0.5;
+    /* width: 100%; */
+    padding: 0 4.85rem;
+    font-family: 苹方-简;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.8rem;
+    text-align: center;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+}
+
+/* 选项卡 */
+.tabs {
+    margin-top: 15.15rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 选项卡头部 */
+.tabs .tab-headers {
+    display: flex;
+    justify-content: center;
+}
+
+.tabs .tab-header {
+    cursor: pointer;
+    border: .5px solid rgba(255, 255, 255, .3);
+    color: #7F818C;
+    width: 11.25rem;
+    height: 3.3rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+}
+
+.tabs .tab-header:hover {
+    color: #FFFFFF;
+    border: .5px solid rgba(255, 255, 255, .4);
+}
+
+/* 选择 */
+.tabs .tab-header.active {
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    border: none;
+    border-bottom: none;
+    background: linear-gradient(to left, #00F7FF, #1937FF);
+}
+
+.tabs .tab-bodies {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.tabs .tab-bodies .tab-block {
+    display: none;
+}
+
+.tabs .tab-bodies .tab-body {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tabs .tab-bodies .active {
+    display: block;
+}
+
+
+/* 字体 */
+.tab-body-h {
+    width: 17.65rem;
+    margin-left: 1.5rem;
+    font-size: 1.9rem;
+    background: linear-gradient(to right, #1937FF, #00F7FF);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem;
+}
+
+.tb-text {
+    padding: 0 1.5rem;
+    font-size: 1.4rem;
+    color: #7F818C;
+}
+
+.tb-text span {
+    color: #FFFFFF;
+}
+
+/* .tb-feature {
+    margin-bottom: 1.78rem;
+} */
+
+.tb-feature img {
+    width: 8.25rem;
+    height: 8.05rem;
+}
+
+.tb-featureOne {
+    display: flex;
+    align-items: center;
+}
+
+.tb-featureTwo {
+    display: flex;
+    align-items: center;
+}
+
+.tb-featureThree {
+    display: flex;
+    align-items: center;
+}
+
+.tb-featureFour {
+    display: flex;
+    align-items: center;
+}
+
+.tb-featureBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tb-feature-title {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+}
+
+.tb-feature-line {
+    width: 1rem;
+    border-top: 1px solid #1937FF;
+    margin: .15rem 0 .15rem 0;
+}
+
+.tb-feature-text {
+    font-size: 1.4rem;
+    color: #7F818C;
+}
+
+.tab-body-hTwo {
+    width: 18.1rem;
+    margin-left: 1.5rem;
+    font-size: 1.9rem;
+    background: linear-gradient(to right, #1937FF, #00F7FF);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
+}
+
+.speed {
+    display: flex;
+    margin: 0 1.5rem;
+    padding: 1rem;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.speed-img {
+    width: .6rem;
+    height: .485rem;
+    margin-bottom: .6rem;
+}
+
+.speed-span {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+}
+
+.speed-imgone {
+    width: 2.25rem;
+    height: 1.95rem;
+    margin-left: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+.tb-titleBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.tb-title {
+    padding: 0 3.2rem;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.tb-osBox {
+    display: none;
+}
+
+/* os内容 */
+.tb-osBox-mobile {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 2.45rem;
+}
+
+.tb-oscon {
+    width: 19.2rem;
+    height: 27rem;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 27rem;
+    overflow: hidden;
+    /* 设置为所需的高度 */
+}
+
+.carousel-item {
+    position: absolute;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    /* 表示这是一个可点击的项目 */
+}
+
+.carousel-item img {
+    max-height: 27rem;
+    max-width: 19rem;
+}
+
+/* 中间的图片更大 */
+.carousel-item.center {
+    z-index: 2;
+    transform: scale(1);
+}
+
+/* 左边的图片 */
+.carousel-item.left {
+    z-index: 1;
+    transform: translateX(-75%) scale(0.75);
+}
+
+/* 右边的图片 */
+.carousel-item.right {
+    z-index: 1;
+    transform: translateX(75%) scale(0.75);
+}
+
+.tb-oscon-intBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3.3rem;
+}
+
+.tb-oscon-introduce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tb-oscon-tcb {
+    width: 1.6rem;
+    height: .85rem;
+    margin-right: .5rem;
+}
+
+.tb-oscon-introduce span {
+    font-size: 1.05rem;
+    color: #7F818C;
+}
+
+.tb-oscon-slow {
+    width: 1.75rem;
+    height: .7rem;
+    margin-right: .5rem;
+}
+
+.tb-oscon-fast {
+    width: 1.3rem;
+    height: .93rem;
+    margin-right: .36rem;
+}
+
+.tb-get-box {
+    padding: 0 1.5rem;
+    margin: 2rem 0;
+}
+
+.tb-get {
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    position: relative;
+
+}
+
+.tb-get::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0.2rem;
+    background: linear-gradient(to top, #00F7FF, #1937FF);
+}
+
+.tb-get-titleBox {
+    width: 13.3rem;
+    background-image: url("/assets/images/unite.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tb-get-textBox {
+    width: 21.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tb-get-title {
+    width: 8.4rem;
+    padding: 1rem;
+
+    height: 14.6rem;
+    opacity: 1;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.tb-get-titles {
+    width: 100%;
+    padding: 1rem;
+
+    height: 14.6rem;
+    opacity: 1;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    border-top: 0.01rem solid #14172B;
+    border-bottom: 0.01rem solid #14172B;
+}
+
+.tb-get-text {
+    padding: 1rem;
+    height: 14.6rem;
+    opacity: 1;
+    font-size: 1.4rem;
+    font-weight: normal;
+    letter-spacing: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7F818C;
+
+    overflow: hidden;
+    /* 隐藏超出容器的内容 */
+    text-overflow: ellipsis;
+    /* 使用省略号表示文本溢出 */
+}
+
+
+.tb-get-texts {
+    height: 14.6rem;
+    padding: 1rem;
+    opacity: 1;
+    font-size: 1.4rem;
+    font-weight: normal;
+    letter-spacing: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7F818C;
+    border-top: 0.01rem solid rgba(255, 255, 255, .05);
+    border-bottom: 0.01rem solid rgba(255, 255, 255, .05);
+
+    overflow: hidden;
+    /* 隐藏超出容器的内容 */
+    text-overflow: ellipsis;
+    /* 使用省略号表示文本溢出 */
+}
+
+.tb-seeBox {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem 0 4.5rem 0;
+}
+
+.tb-see {
+    width: 25rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(270deg, #00F7FF 0%, #1937FF 100%);
+    border: none;
+    cursor: pointer;
+}
+
+.tb-see:hover {
+    background: linear-gradient(270deg, #00FFF9 0%, #0065FF 100%);
+}
+
+.tb-see img {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.tb-see-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 0px;
+}
+
+.tb-support {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tb-supporta {
+    margin: 0 2rem 2rem 2rem;
+    width: 12.1rem;
+    height: 7.75rem;
+    opacity: 1;
+    background: #000319;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    line-height: 7.95rem;
+}
+
+.tb-supporta-one {
+    width: 12.1rem;
+    height: 7.75rem;
+}
+
+.tb-supporta-two {
+    width: 12.1rem;
+    height: 7.75rem;
+}
+
+.tb-supporta-three {
+    width: 12.1rem;
+    height: 7.75rem;
+}
+
+.tb-supporta-four {
+    width: 12.1rem;
+    height: 7.75rem;
+}
+
+.ti-left {
+    display: none;
+}
+
+.ti-lefts {
+    padding: 1.5rem;
+
+}
+
+.ti-lefts-boxs {
+    border-radius: 1rem;
+    opacity: 1;
+    padding: 0 1.7rem;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tl-jump-all {
+    border-bottom: 1px solid rgba(216, 216, 216, 0.15);
+
+}
+
+.tl-jumps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tl-jump-all:last-child {
+    border-bottom: none;
+}
+
+.ti-lefts-box {
+    width: 12.2rem;
+    height: 6.5rem;
+    font-size: 1.6rem;
+    background: linear-gradient(to right, #1937FF, #00F7FF);
+    background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.tl-jumpImgs {
+    margin-right: .85rem;
+}
+
+.ti-right {
+    display: none;
+}
+
+.ti-direction {
+    width: .8rem;
+    height: .4rem;
+}
+
+.ti-rights-box {
+    visibility: hidden;
+    /* 初始设置为不可见 */
+    opacity: 0;
+    max-height: 0;
+    /* 初始高度为0，确保元素隐藏 */
+    overflow: hidden;
+    transition: visibility 0s ease 0.5s, opacity 0.5s ease, max-height 0.5s ease;
+    /* 设置动画效果 */
+}
+
+.tl-jump-all .actives-mobile {
+    visibility: visible;
+    /* 设置为可见 */
+    opacity: 1;
+    max-height: 35rem;
+    /* 这里设置一个足够大的高度 */
+    transition: visibility 0s ease 0s, opacity 0.5s ease, max-height 0.5s ease;
+    /* 更新动画效果 */
+}
+
+.ti-right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.ti-text {
+    font-size: 1.2rem;
+    color: #7F818C;
+}
+
+.ti-jump {
+    padding-top: 1rem;
+}
+
+.ti-jump-title {
+    font-size: 1.2rem;
+    color: #7F818C;
+    margin-bottom: 1rem;
+}
+
+.ti-jump-text {
+    height: 4rem;
+    background: rgba(255, 255, 255, .05);
+    border-radius: .4rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    color: #7F818C;
+}
+
+.ti-jump-code {
+    background: rgba(255, 255, 255, .05);
+    border-radius: .4rem;
+    display: flex;
+    justify-content: start;
+}
+
+.ti-jump-code code {
+    font-size: 1.2rem;
+    color: #7F818C;
+    padding: 1.25rem 2rem;
+}
