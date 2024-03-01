@@ -48,17 +48,17 @@
                 <div class="data-select active" data-tab="data1" data-time="so far">
                     All Time
                 </div>
-                <div class="data-select" data-tab="data2" data-time="in the last year">
-                    Last Year
+                <div class="data-select" data-tab="data2" data-time="in the past year">
+                    Past Year
                 </div>
-                <div class="data-select" data-tab="data3" data-time="in the last six months">
-                    Last 6 Months
+                <div class="data-select" data-tab="data3" data-time="in the past six months">
+                    Past 6 Months
                 </div>
-                <div class="data-select" data-tab="data4" data-time="in the last three months">
-                    Last 3 Months
+                <div class="data-select" data-tab="data4" data-time="in the past three months">
+                    Past 3 Months
                 </div>
-                <div class="data-select" data-tab="data5" data-time="in the last month">
-                    Last Month
+                <div class="data-select" data-tab="data5" data-time="in the past month">
+                    Past Month
                 </div>
             </div>
             <div class="data-content">
@@ -234,7 +234,7 @@
             });
         }
 
-        function linkAll() {
+        function linkAllTime() {
             if (localStorage.getItem('data1')) {
                 displayData(JSON.parse(localStorage.getItem('data1')), 'data1', 'All Time'); // 调用 displayData 函数来展示数据
             }
@@ -255,11 +255,11 @@
 
         }
 
-        function linkYear() {
+        function linkPastYear() {
             if (localStorage.getItem('data2')) {
-                displayData(JSON.parse(localStorage.getItem('data2')), 'data2', 'Last Year'); // 调用 displayData 函数来展示数据
+                displayData(JSON.parse(localStorage.getItem('data2')), 'data2', 'Past Year'); // 调用 displayData 函数来展示数据
             }
-            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_year.json')
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/past_year.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -269,18 +269,18 @@
                 .then(data => {
                     localStorage.setItem('data2', JSON.stringify(data))
 
-                    displayData(data, 'data2', 'Last Year'); // 调用 displayData 函数来展示数据
+                    displayData(data, 'data2', 'Past Year'); // 调用 displayData 函数来展示数据
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
                 });
         }
 
-        function linkSix() {
+        function linkPastSixMonths() {
             if (localStorage.getItem('data3')) {
-                displayData(JSON.parse(localStorage.getItem('data3')), 'data3', 'Last 6 Months'); // 调用 displayData 函数来展示数据
+                displayData(JSON.parse(localStorage.getItem('data3')), 'data3', 'Past 6 Months'); // 调用 displayData 函数来展示数据
             }
-            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_6_months.json')
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/past_6_months.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -290,18 +290,18 @@
                 .then(data => {
                     localStorage.setItem('data3', JSON.stringify(data))
 
-                    displayData(data, 'data3', 'Last 6 Months'); // 调用 displayData 函数来展示数据
+                    displayData(data, 'data3', 'Past 6 Months'); // 调用 displayData 函数来展示数据
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
                 });
         }
 
-        function linkThree() {
+        function linkPastThreeMonths() {
             if (localStorage.getItem('data4')) {
-                displayData(JSON.parse(localStorage.getItem('data4')), 'data4', 'Last 3 Months'); // 调用 displayData 函数来展示数据
+                displayData(JSON.parse(localStorage.getItem('data4')), 'data4', 'Past 3 Months'); // 调用 displayData 函数来展示数据
             }
-            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_3_months.json')
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/past_3_months.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -311,18 +311,18 @@
                 .then(data => {
                     localStorage.setItem('data4', JSON.stringify(data))
 
-                    displayData(data, 'data4', 'Last 3 Months'); // 调用 displayData 函数来展示数据
+                    displayData(data, 'data4', 'Past 3 Months'); // 调用 displayData 函数来展示数据
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
                 });
         }
 
-        function linkLast() {
+        function linkPastMonth() {
             if (localStorage.getItem('data5')) {
-                displayData(JSON.parse(localStorage.getItem('data5')), 'data5', 'Last Months'); // 调用 displayData 函数来展示数据
+                displayData(JSON.parse(localStorage.getItem('data5')), 'data5', 'Past Month'); // 调用 displayData 函数来展示数据
             }
-            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/last_month.json')
+            fetch('https://raw.githubusercontent.com/asterinas/thank-you-dataset/main/dataset/past_month.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -332,22 +332,22 @@
                 .then(data => {
                     localStorage.setItem('data5', JSON.stringify(data))
 
-                    displayData(data, 'data5', 'Last Months'); // 调用 displayData 函数来展示数据
+                    displayData(data, 'data5', 'Past Month'); // 调用 displayData 函数来展示数据
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
                 });
         }
 
-        linkAll()
+        linkAllTime()
 
-        linkYear()
+        linkPastYear()
 
-        linkSix()
+        linkPastSixMonths()
 
-        linkThree()
+        linkPastThreeMonths()
 
-        linkLast()
+        linkPastMonth()
 
 
         window.addEventListener('DOMContentLoaded', function () {
