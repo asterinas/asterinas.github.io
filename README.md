@@ -1,4 +1,4 @@
-# Asterinas Website Project
+# Asterinas Website
 
 The Asterinas Website is a static Website
 hosted by [Github Pages](https://pages.github.com/)
@@ -49,3 +49,7 @@ and then push the changes or submit a pull request to
 Once the modifications are accepted,
 the latest version of the site will be deployed automatically.
 You can view the live site at https://asterinas.github.io/.
+
+## License
+
+The project is released under [the Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
