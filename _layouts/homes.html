@@ -209,7 +209,7 @@
                                       Install Asterinas OSDK
                                     </div>
                                     <div class="ti-jump-text">
-                                      cargo install aster-osdk
+                                      cargo install cargo-osdk
                                     </div>
                                   </div>
                                   <div class="ti-jump">
@@ -218,7 +218,7 @@
                                       Create a Rust project for your "Hello World" kernel.
                                     </div>
                                     <div class="ti-jump-text">
-                                      cargo osdk new my-first-os --bin
+                                      cargo osdk new my-first-os --kernel
                                     </div>
                                   </div>
                                   <div class="ti-jump">
@@ -281,12 +281,12 @@
                                     </div>
                                     <div>
                                       <pre class="ti-jump-code">
-                              <code >#<span style="color: #FF6BF9;">[</span>cfg<span style="color: #FF6BF9;">(</span> ktest<span style="color: #FF6BF9;">)]</span> 
+                              <code >#<span style="color: #FF6BF9;">[</span>cfg<span style="color: #FF6BF9;">(</span>ktest<span style="color: #FF6BF9;">)]</span> 
 <span style="color: #00B7BD;">mod</span> tests <span style="color: #FF6BF9;">{</span>
-  #<span style="color: #FF6BF9;">[</span>ktest<span style="color: #FF6BF9;">]</span>
-  <span style="color: #00B7BD;">fn it_works</span><span style="color: #FF6BF9;">() {</span>
-      <span style="color: #00B7BD;">assert_eq</span><span style="color: #FF6BF9;">!(</span><span style="color: #00B7BD;">true</span>, <span style="color: #00B7BD;">true</span><span style="color: #FF6BF9;">)</span>;
-  <span style="color: #FF6BF9;">}</span>
+    #<span style="color: #FF6BF9;">[</span>ktest<span style="color: #FF6BF9;">]</span>
+    <span style="color: #00B7BD;">fn it_works</span><span style="color: #FF6BF9;">() {</span>
+        <span style="color: #00B7BD;">assert_eq</span><span style="color: #FF6BF9;">!(</span><span style="color: #00B7BD;">true</span>, <span style="color: #00B7BD;">true</span><span style="color: #FF6BF9;">)</span>;
+    <span style="color: #FF6BF9;">}</span>
 <span style="color: #FF6BF9;">}</span>
                               </code>
                             </pre>
@@ -350,7 +350,7 @@
                                   Install Asterinas OSDK
                                 </div>
                                 <div class="ti-jump-text">
-                                  cargo install aster-osdk
+                                  cargo install cargo-osdk
                                 </div>
                               </div>
                               <div class="ti-jump">
@@ -359,7 +359,7 @@
                                   Create a Rust project for your "Hello World" kernel.
                                 </div>
                                 <div class="ti-jump-text">
-                                  cargo osdk new my-first-os --bin
+                                  cargo osdk new my-first-os --kernel
                                 </div>
                               </div>
                               <div class="ti-jump">
@@ -383,12 +383,12 @@
                                 </div>
                                 <div>
                                   <pre class="ti-jump-code">
-                              <code >#<span style="color: #FF6BF9;">[</span>cfg<span style="color: #FF6BF9;">(</span> ktest<span style="color: #FF6BF9;">)]</span> 
+                              <code >#<span style="color: #FF6BF9;">[</span>cfg<span style="color: #FF6BF9;">(</span>ktest<span style="color: #FF6BF9;">)]</span> 
 <span style="color: #00B7BD;">mod</span> tests <span style="color: #FF6BF9;">{</span>
-  #<span style="color: #FF6BF9;">[</span>ktest<span style="color: #FF6BF9;">]</span>
-  <span style="color: #00B7BD;">fn it_works</span><span style="color: #FF6BF9;">() {</span>
-      <span style="color: #00B7BD;">assert_eq</span><span style="color: #FF6BF9;">!(</span><span style="color: #00B7BD;">true</span>, <span style="color: #00B7BD;">true</span><span style="color: #FF6BF9;">)</span>;
-  <span style="color: #FF6BF9;">}</span>
+    #<span style="color: #FF6BF9;">[</span>ktest<span style="color: #FF6BF9;">]</span>
+    <span style="color: #00B7BD;">fn it_works</span><span style="color: #FF6BF9;">() {</span>
+        <span style="color: #00B7BD;">assert_eq</span><span style="color: #FF6BF9;">!(</span><span style="color: #00B7BD;">true</span>, <span style="color: #00B7BD;">true</span><span style="color: #FF6BF9;">)</span>;
+    <span style="color: #FF6BF9;">}</span>
 <span style="color: #FF6BF9;">}</span>
                               </code>
                             </pre>
