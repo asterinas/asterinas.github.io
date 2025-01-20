@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "Asterinas in 2024"
+date:   2025-01-20 10:27:24 +0800
+author: "Hongliang Tian"
+---
+
+**Happy New Year and the upcoming Lunar New Year!** I wish everyone a wonderful and fruitful 2025.
+
+The blog section of the Asterinas website has existed since day one, yet we've been so busy making great technical progress that we haven't written a single post—until now! One of my New Year's resolutions, as the maintainer of Asterinas, is to encourage community members to share their thoughts and progress more regularly. Now that we have entered 2025, I think this is the perfect time to look back on our achievements of 2024 and write the very first official Asterinas blog post!
+
+In this post, I'd like to summarize the amazing progress we made in 2024.
+
+## What We Achieved
+
+In January 2024, we felt that the Asterinas project had grown mature enough to share with the rest of the world. So, we made it open source! As a result, 2024 was our first year as an open-source project. 
+
+In 2024, we've introduced a range of enhancements that boost productivity, expand functionality, optimize performance, and strengthen system safety. Let's take a closer look.
+
+<!-- Insert a transition paragraph to introduce the followinfg key aspects of improvements -->
+
+<!--
+Here is a quick snapshot of our progress in numbers:
+
+| Metric                 | Total  | Added in 2024  |
+|------------------------|--------|----------------|
+| **Commits**        | 1909   | +1000          |
+| **PRs**            | 1000   | +XXX           |
+| **Issues**         | 600    | +XXX           |
+| **Contributors**   | 50     | +XXX           |
+
+While these numbers highlight our growth, they only scratch the surface of what Asterinas has accomplished. Beyond raw statistics, our community has introduced major improvements over various aspects.
+-->
+
+### Productivity Boosted
+
+We believe that the happiness of OS developers is crucial to Asterinas's success. Developers deserve better languages (Rust), better APIs (OSTD), and better tooling (OSDK). That's why we created and published [OSTD](https://crates.io/crates/ostd) and [OSDK](https://crates.io/crates/cargo-osdk) on crates.io. Asterinas has been built with the OSTD and OSDK; your kernels can, too!
+
+- **OSTD** is the (unofficial) standard library for Rust OS development. It provides [a small set of safe APIs](https://docs.rs/ostd/latest/ostd/) that are _powerful_ enough to write general-purpose, UNIX-style OS kernels in safe Rust.
+- **OSDK** is a Cargo subcommand that streamlines the workflow of Rust OS projects based on OSTD. With OSDK, you can create, build, and test Rust OS projects just as easily as you do regular Rust applications with Cargo. It even includes built-in support for [debugging kernels in a VM](https://asterinas.github.io/book/osdk/reference/commands/debug.html) and [profiling kernels via sampling](https://asterinas.github.io/book/osdk/reference/commands/profile.html).
+
+### Functionality Enriched
+
+Asterinas now provides [over 180 Linux system calls](https://asterinas.github.io/book/kernel/linux-compatibility.html), with about 60 added in 2024. On Intel x86 machines, we introduced [Intel TDX support](https://asterinas.github.io/book/kernel/intel_tdx.html), making Asterinas a viable guest OS for TDX-based Confidential VMs. We also laid the groundwork for RISC-V CPU architecture support, broadening Asterinas's hardware compatibility.
+
+### Performance Optimized
+
+We invested a great deal of effort in pinpointing and resolving performance bottlenecks. To measure our progress, we established the [Asterinas Benchmark Collection](https://github.com/asterinas/asterinas/tree/main/test/benchmark), which runs various benchmarks nightly and compares Asterinas's normalized performance against Linux. We're proud to say that in single-core settings, Asterinas's performance is on par with Linux in benchmarks like [LMbench](https://asterinas.github.io/benchmark/lmbench/). In 2025, we will turn our attention to optimizing performance for SMP (Symmetric Multiprocessing) environments.
+
+### Safety Enhanced
+
+Asterinas's signature [framekernel](https://asterinas.github.io/book/kernel/the-framekernel-architecture.html) OS architecture promises a small and sound trusted computing base (TCB) for kernel memory safety. To further ensure robustness, we collaborated with [CertiK](https://www.certik.com/) for code auditing and formal verification of OSTD's memory management module—an area that relies heavily on unsafe code. This joint effort has boosted our confidence in the soundness of OSTD and, by extension, Asterinas.
+
+### Papers Published
+
+We describe the design principles of our novel framekernel OS architecture in two research papers:
+- A short-paper version published at [APSys'24](https://dl.acm.org/doi/10.1145/3678015.3680492).
+- A full-paper version, currently under submission, which can be previewed on [arXiv](). 
+
+## 2025 Roadmap
+
+We'll be spinning up our 2025 roadmap process in the very near future -- stay tuned! If you'd like to get involved or contribute ideas, keep an eye on our GitHub repository and this blog.
+
+## Thank You
+
+We feel incredibly fortunate to have welcomed contributions from [over 50 individuals](https://asterinas.github.io/contributors.html) so far. In this post, I'd like to specifically recognize the top 10 contributors of 2024 (by contribution score). It has been both an honor and a pleasure to collaborate with all of you, and our achievements this past year would not have been possible without your dedication. Please join me in thanking this outstanding group of contributors!
+
+1. **[Junyang Zhang](https://github.com/junyang-zh)**  
+   For leading the development of OSDK and the memory management module of OSTD.
+
+2. **[Ruihan Li](https://github.com/lrh2000)**  
+   For doing an excellent job in refactoring the network subsystem and demonstrating a steadfast commitment to enhancing code quality.
+
+3. **[Jianfeng Jiang](https://github.com/StevenJiang1110)**  
+   For tackling some challenging heavy lifts in optimizing sockets and the virtio-net driver.
+
+4. **[Chengjun Chen](https://github.com/cchanging)**  
+   For incredible work on optimizing memory- and process-management system calls such as `mmap` and `fork`.
+
+5. **[Yuke Peng](https://github.com/sdww0)**  
+   For high-value contributions to device and MMIO support in OSTD, as well as extensive work optimizing application benchmarks.
+
+6. **[Fabing Li](https://github.com/grief8)**  
+   For creating the Asterinas Benchmark Collection, which has proven immensely useful in our coordinated performance-optimization efforts.
+
+7. **[Shaowei Song](https://github.com/lucassong-mh)**  
+   For spearheading the development of [MlsDisk]() and taking on the challenging task of maintaining the sophisticated file system and block I/O subsystems.
+
+8. **[Qingsong Chen](https://github.com/cqs21)**  
+   For minimizing overhead on critical system-call paths and porting Asterinas to x86-64 platforms beyond Intel.
+
+9. **[Qing Li](https://github.com/liqinggd)**  
+   For laying the foundation of our file system and block I/O subsystems.
+
+10. **[Siyuan Hui](https://github.com/Hsy-Intel)**  
+    For adding Intel TDX support and establishing a self-hosted CI infrastructure.
+
+Thank you for reading, and here's to another productive year for Asterinas and our entire community!
+
