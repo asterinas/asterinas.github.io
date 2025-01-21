@@ -55,7 +55,7 @@ Asterinas's signature [framekernel](https://asterinas.github.io/book/kernel/the-
 
 We describe the design principles of our novel framekernel OS architecture in two research papers:
 - A short-paper version published at [APSys'24](https://dl.acm.org/doi/10.1145/3678015.3680492).
-- A full-paper version, currently under submission, which can be previewed on [arXiv](). 
+- A full-paper version, currently under submission, which will soon be posted on arXiv for preview.
 
 ## 2025 Roadmap
 
@@ -84,7 +84,7 @@ We feel incredibly fortunate to have welcomed contributions from [over 50 indivi
    For creating the Asterinas Benchmark Collection, which has proven immensely useful in our coordinated performance-optimization efforts.
 
 7. **[Shaowei Song](https://github.com/lucassong-mh)**  
-   For spearheading the development of [MlsDisk]() and taking on the challenging task of maintaining the sophisticated file system and block I/O subsystems.
+   For spearheading the development of [MlsDisk](https://github.com/asterinas/mlsdisk) and taking on the challenging task of maintaining the sophisticated file system and block I/O subsystems.
 
 8. **[Qingsong Chen](https://github.com/cqs21)**  
    For minimizing overhead on critical system-call paths and porting Asterinas to x86-64 platforms beyond Intel.
@@ -95,5 +95,16 @@ We feel incredibly fortunate to have welcomed contributions from [over 50 indivi
 10. **[Siyuan Hui](https://github.com/Hsy-Intel)**  
     For adding Intel TDX support and establishing a self-hosted CI infrastructure.
 
+**Finally, we'd like to express our gratitude to the following forward-thinking organizations for supporting the Asterinas project (in alphabetical order):**
+
+- Ant Group
+- Intel Corporation
+- Peking University
+- Southern University of Science and Technology
+- Zhongguancun Lab
+
+Your support plays a crucial role in helping us push boundaries and accelerate development!
+
 Thank you for reading, and here's to another productive year for Asterinas and our entire community!
+
 
