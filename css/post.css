@@ -472,8 +472,7 @@ table td {
 
 
 p img {
-  width: 7.8rem;
-  height: 4.7rem;
+  width: 100%;
   border-radius: 20px;
   margin-top: .3rem;
 }
