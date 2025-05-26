@@ -374,12 +374,14 @@ blockquote {
   color: #828282;
   padding-left: .26rem;
   font-size: .18rem;
-  opacity: 0.5001;
   position: relative;
+  background-color: #252832;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
 }
 
 blockquote p{
-  margin: 0.1rem 0;
+  margin: 0.0rem 0;
 }
 
 blockquote::before {
@@ -393,9 +395,9 @@ blockquote::before {
   /* 绝对定位，相对于父元素（li） */
   left: 0;
   /* 将点向左移动，以便它出现在文本前面 */
-  top: .04rem;
+  top: 0rem;
   width: .04rem;
-  height: .72rem;
+  height: 100%;
   border-radius: .06rem;
   opacity: 0.5001;
   background-image: linear-gradient(to left, #7F818C, #7F818C);

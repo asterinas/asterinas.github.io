@@ -348,7 +348,7 @@ p {
     font-weight: normal;
     line-height: 1.8rem;
     letter-spacing: 0;
-    color: #7F818C;
+    color: #B3B5C4;
     margin: 1rem 0;
 }
 
@@ -361,7 +361,7 @@ ul li {
     position: relative;
     font-weight: normal;
     font-size: 1.4rem;
-    color: #7F818C;
+    color: #B3B5C4;
     line-height: 1.8rem;
 }
 
@@ -383,10 +383,13 @@ ul li::before {
 
 blockquote {
     margin: 1rem 0;
-    color: #7F818C;
-    padding-left: 2rem;
+    color: #B3B5C4;
+    padding-left: 1rem;
     font-size: .18rem;
     position: relative;
+    background-color: #252832;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
 }
 
 blockquote p {
@@ -400,11 +403,11 @@ blockquote::before {
     /* 设置点的大小 */
     position: absolute;
     /* 绝对定位，相对于父元素（li） */
-    left: 0.95rem;
+    left: 0rem;
     /* 将点向左移动，以便它出现在文本前面 */
-    top: 1rem;
+    top: 0rem;
     width: .2rem;
-    height: 2.85rem;
+    height: 100%;
     border-radius: .3rem;
     opacity: 0.5001;
     background: #7F818C;
@@ -417,7 +420,7 @@ ol {
 
 ol li {
     font-size: 1.4rem;
-    color: #7F818C;
+    color: #B3B5C4;
     line-height: 1.8rem;
     font-weight: normal;
 }
@@ -435,7 +438,7 @@ table {
     margin-bottom: 1.5rem;
     width: 100%;
     text-align: left;
-    color: #7F818C;
+    color: #B3B5C4;
     border-collapse: collapse;
     border: .01rem solid rgba(255, 255, 255, 0.3);
 }
@@ -463,7 +466,6 @@ table td {
 
 p img {
     width: 100%;
-    height: 20.8rem;
     border-radius: 0.8845rem;
 }
 
