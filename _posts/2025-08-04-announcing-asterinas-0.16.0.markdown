@@ -110,6 +110,32 @@ We have made the following key changes to OSDK:
 * [Add OSDK's code coverage feature](https://github.com/asterinas/asterinas/pull/2203)
 * [Support `cargo osdk test` for RISC-V](https://github.com/asterinas/asterinas/pull/2168)
 
+## Contributors
+
+This release was made possible by contributions from 21 individuals. Thank you for your amazing work!
+
+* Ruihan Li (81 commits)
+* Qingsong Chen (31 commits)
+* jiangjianfeng (29 commits)
+* 王英泰 (28 commits)
+* Chen Chengjun (24 commits)
+* Zhang Junyang (24 commits)
+* Wang Siyuan (16 commits)
+* Marsman1996 (13 commits)
+* Cautreoxit (8 commits)
+* Hsy-Intel (6 commits)
+* Zejun Zhao (5 commits)
+* Yang Zhichao (4 commits)
+* Hongliang Tian (3 commits)
+* js2xxx (3 commits)
+* Wei Zhang (2 commits)
+* Yuke Peng (2 commits)
+* Philipp Schuster (1 commit)
+* Ruize Tang (1 commit)
+* YanWQ-monad (1 commit)
+* stuuupidcat (1 commit)
+* yuankunzhang (1 commit)
+
 ---
 
 We're incredibly proud of the progress made in Asterinas 0.16.0 and are excited about the new possibilities these changes unlock. We encourage you to explore the new features and contribute to the ongoing development!
