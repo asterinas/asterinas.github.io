@@ -11,7 +11,7 @@ This version marks a significant leap forward with initial support for the **Loo
 
 Key enhancements in this release include broadened functionality for **UNIX sockets** (now supporting file descriptor passing and the `SOCK_SEQPACKET` socket type), partial support for **netlink sockets of the `NETLINK_KOBJECT_UEVENT` type**, and the foundational implementation of **CgroupFS**. Our testing infrastructure has also seen a significant upgrade with the integration of system call tests from the **Linux Test Project (LTP)**. Plus, we've adopted **[Nix](https://nix.dev/manual/nix/2.28/introduction)** for building the initramfs, which streamlines our cross-compilation and testing workflows.
 
-We'd also like to extend a huge congratulations to members of the Asterinas community whose groundbreaking research papers about Asterinas were recently accepted by prestigious academic conferences:
+We'd also like to extend a huge congratulations to members of the Asterinas community whose outstanding research papers about Asterinas were recently accepted by prestigious academic conferences:
 
 * "**Asterinas: A Linux ABI-Compatible, Rust-Based Framekernel OS with a Small and Sound TCB**" published at [USENIX ATC'25](https://www.usenix.org/conference/atc25/presentation/peng-yuke)
 * "**Converos: Practical Model Checking for Verifying Rust OS Kernel Concurrency**" published at [USENIX ATC'25](https://www.usenix.org/conference/atc25/presentation/tang)

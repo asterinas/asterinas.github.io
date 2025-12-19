@@ -21,7 +21,7 @@ This release marks a significant milestone in the evolution of Asterinas as we t
 
 On the architecture front, **RISC-V support** has improved dramatically, with support for SMP (Symmetric Multiprocessing), FPU (Floating-Point Unit), VirtIO, and the SiFive HiFive Unleashed QEMU machine type. The kernel has also expanded with a new **input subsystem** (supporting keyboards and mice) and initial support for **namespaces and cgroups**. For filesystem developers, the big news is the addition of an **FS event notification mechanism (`inotify`)**, a new **ioctl infrastructure**, and a new filesystem type, **ConfigFS**. Finally, we are introducing **`sctrace`**—a dedicated tool for tracing and debugging syscall compatibility—now published on [crates.io](https://crates.io/crates/sctrace).
 
-We'd also like to extend a huge congratulations to members of the Asterinas community whose groundbreaking research papers about Asterinas were recently recognized by prestigious academic conferences:
+We'd also like to extend a huge congratulations to members of the Asterinas community whose outstanding research papers about Asterinas were recently recognized by prestigious academic conferences:
 
 * "**CortenMM: Efficient Memory Management with Strong Correctness Guarantees**" received the Best Paper Award at [SOSP'25](https://sigops.org/s/conferences/sosp/2025/).
 * "**RusyFuzz: Unhandled Exception Guided Fuzzing for Rust OS Kernel**" was accepted by [ICSE'26](https://conf.researchr.org/home/icse-2026).
