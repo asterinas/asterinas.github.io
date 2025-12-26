@@ -5,7 +5,7 @@ date:   2025-12-19 09:00:00 +0800
 author: "Hongliang Tian"
 ---
 
-The Asterinas community is happy to announce a new version of Asterinas, 0.17.0!
+The [Asterinas](https://github.com/asterinas/asterinas) community is happy to announce a new version of Asterinas, [0.17.0](https://github.com/asterinas/asterinas/releases/tag/v0.17.0)!
 
 <div class="video-container">
     <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115707140442459&bvid=BV1oom2B2EqP&cid=34699609375&p=1&autoplay=0"
