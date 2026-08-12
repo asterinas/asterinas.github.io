@@ -210,6 +210,7 @@ a {
 }
 
 .tabItem .tab {
+    display: block;
     width: 7.65rem;
     height: 3.9rem;
     cursor: pointer;

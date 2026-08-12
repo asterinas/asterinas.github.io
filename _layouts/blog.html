@@ -18,23 +18,23 @@
       </a>
     </div>
     <div class="hdLink">
-      <div data-tab="1" class="tab">Home</div>
-      <div data-tab="2" class="tab" style="color:#fff">Blog
+      <a class="tab" href="/index.html">Home</a>
+      <a class="tab" href="/blog.html" style="color:#fff">Blog
         <div class="dot"></div>
-      </div>
-      <div data-tab="3" class="tab">Docs</div>
+      </a>
+      <a class="tab" href="https://asterinas.github.io/book">Docs</a>
     </div>
     <div class="hdLinks">
       <div style="cursor: pointer;">
         <img src="/assets/images/navigation.jpg" alt="img">
       </div>
       <div class="tabItem" flot="false">
-        <div data-tab="1" class="tab">Home</div>
+        <a class="tab" href="/index.html">Home</a>
         <div class="line"></div>
-        <div data-tab="2" class="tab" style="color:#fff;font-weight: 500;"><div class="dot"></div>Blog
-        </div>
+        <a class="tab" href="/blog.html" style="color:#fff;font-weight: 500;"><div class="dot"></div>Blog
+        </a>
         <div class="line"></div>
-        <div data-tab="3" class="tab">Docs</div>
+        <a class="tab" href="https://asterinas.github.io/book">Docs</a>
       </div>
     </div>
   </div>
@@ -95,20 +95,6 @@
 </body>
 
 <script>
-  var tabs = document.querySelectorAll('.tab');
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      var tabId = this.getAttribute('data-tab');
-      if (tabId === '1') {
-        window.location.href = '/index.html';
-      } else if (tabId === '2') {
-        window.location.href = '/blog.html';
-      } else if (tabId === '3') {
-        window.location.href = 'https://asterinas.github.io/book';
-      }
-    });
-  })
-
   window.addEventListener('DOMContentLoaded', function () {
     const screenWidth = window.innerWidth;
     const hdLink = document.querySelectorAll('.hdLink');

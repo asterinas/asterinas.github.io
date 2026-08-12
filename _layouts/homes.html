@@ -19,22 +19,22 @@
       </a>
     </div>
     <div class="hdLink">
-      <div data-tab="1" class="tab" style="color:#fff">Home
+      <a class="tab" href="/index.html" style="color:#fff">Home
         <div class="dot"></div>
-      </div>
-      <div data-tab="2" class="tab">Blog</div>
-      <div data-tab="3" class="tab">Docs</div>
+      </a>
+      <a class="tab" href="/blog.html">Blog</a>
+      <a class="tab" href="https://asterinas.github.io/book">Docs</a>
     </div>
     <div class="hdLinks">
       <div style="cursor: pointer;">
         <img src="/assets/images/navigation.jpg" alt="img">
       </div>
       <div class="tabItem" flot="false">
-        <div data-tab="1" class="tab" style="color:#fff;font-weight: 500;"><div class="dot"></div>Home</div>
+        <a class="tab" href="/index.html" style="color:#fff;font-weight: 500;"><div class="dot"></div>Home</a>
         <div class="line"></div>
-        <div data-tab="2" class="tab">Blog</div>
+        <a class="tab" href="/blog.html">Blog</a>
         <div class="line"></div>
-        <div data-tab="3" class="tab">Docs</div>
+        <a class="tab" href="https://asterinas.github.io/book">Docs</a>
       </div>
     </div>
   </div>
@@ -452,8 +452,8 @@
                     </div>
                     <div>
                       <div>
-                        <div class="tb-seeBoxs">
-                        </div>
+                        <a class="tb-seeBoxs" href="/contributors.html" aria-label="See individual contributors">
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -641,12 +641,12 @@
                       We express our heartfelt gratitude to the contributors who have made this project a reality.
                     </div>
                     <div class="tb-seeBox">
-                      <button class="tb-see">
+                      <a class="tb-see" href="/contributors.html">
                         <div class="tb-see-title">
                           See individual contributors
                         </div>
                         <img src="/assets/images/right.png" alt="img">
-                      </button>
+                      </a>
                     </div>
 
                     <div class="tb-text">
@@ -708,22 +708,6 @@
   </div>
 
   <script>
-
-    var tabs = document.querySelectorAll('.tab');
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var tabId = this.getAttribute('data-tab');
-        if (tabId === '1') {
-          window.location.href = '/index.html';
-        } else if (tabId === '2') {
-          window.location.href = '/blog.html';
-        } else if (tabId === '3') {
-          window.location.href = 'https://asterinas.github.io/book';
-        }
-      });
-
-    })
-
 
     window.addEventListener('DOMContentLoaded', function () {
       const screenWidth = window.innerWidth;
@@ -798,16 +782,6 @@
         activeTab.classList.add('actives-mobile');
       });
     });
-
-    const seeBox = document.querySelectorAll('.tb-seeBox');
-    seeBox[0].addEventListener('click', function () {
-      window.location.href = '/contributors.html';
-    })
-
-    const seeBoxs = document.querySelectorAll('.tb-seeBoxs');
-    seeBoxs[0].addEventListener('click', function () {
-      window.location.href = '/contributors.html';
-    })
 
     // 获取所有的图片元素
     let carouselItems = document.querySelectorAll('.carousel-item');
