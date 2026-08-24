@@ -787,3 +787,9 @@ p .language-plaintext {
     height: 100%;
     border: 0; /* Ensures no extra border from the iframe */
 }
+
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}

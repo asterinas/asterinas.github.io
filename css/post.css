@@ -832,3 +832,10 @@ p img {
     height: 100%;
     border: 0; /* Ensures no extra border from the iframe */
 }
+
+/* MathJax (LaTeX) — scroll wide formulas on narrow viewports */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
