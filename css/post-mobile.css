@@ -196,69 +196,6 @@ a:hover {
     position: relative;
 }
 
-.tabItem {
-    position: absolute;
-    background-color: rgb(6, 42, 97);
-    left: -6.1rem;
-    top: 2.7rem;
-    border-radius: 1rem;
-    display: none;
-}
-
-.tabItem::after {
-    content: '';
-    /* 伪元素内容为空 */
-    position: absolute;
-    /* 绝对定位 */
-    top: -0.55rem;
-    /* 与正方形的顶部对齐 */
-    right: 0.55rem;
-    /* 与正方形的右侧对齐 */
-    border-left: 0.55rem solid transparent;
-    /* 左边的透明边框 */
-    border-right: 0.55rem solid transparent;
-    /* 右边的透明边框 */
-    border-bottom: 0.55rem solid rgb(6, 42, 97);
-    /* 底部的白色边框，形成三角形 */
-    width: 0;
-    /* 宽度为0 */
-    height: 0;
-    /* 高度为0 */
-}
-
-.tabItem .tab {
-    display: block;
-    width: 7.65rem;
-    height: 3.9rem;
-    line-height: 3.9rem;
-    color: #D8D8D8;
-    font-size: 1.4rem;
-    position: relative;
-    cursor: pointer;
-    text-align: center;
-}
-
-.line {
-    width: 80%;
-    height: 0.1rem;
-    background-image: linear-gradient(to right,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, .5) 25%,
-            rgba(255, 255, 255, .5) 75%,
-            rgba(255, 255, 255, 0) 100%);
-    /* 为了显示在容器背景之上，需要设置透明边框 */
-    margin-left: 10%;
-}
-.dot {
-    height: 0.4rem;
-    width: 0.4rem;
-    background: #00F7FF;
-    border-radius: 50%;
-    position: absolute;
-    left: 1.5rem;
-    top: calc(50% - 0.2rem)
-}
-
 /* 页面背景 */
 .tops {
     width: 100%;
