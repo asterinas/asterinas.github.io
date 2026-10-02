@@ -1,0 +1,143 @@
+/*
+ * Figures drawn as inline SVG in posts (<figure class="aster-fig">).
+ * Maintained with the aster-figure skill (.agents/skills/aster-figure); read its SKILL.md before editing.
+ *
+ * Colors live here, not in the SVGs: a figure's shapes and text carry only classes,
+ * so every figure on the site uses the same palette with the same meaning.
+ *   cyan / blue   Asterinas, our approach, the highlighted option
+ *   red           unsafe, risk, shared trusted computing base
+ *   amber         overhead, cost, slow path
+ *   gray          neutral parts: other software, the host, hardware
+ */
+
+.aster-fig {
+  --af-cyan: #00F7FF;
+  --af-blue: #1937FF;
+  --af-red: #FF5C7A;
+  --af-amber: #FFB020;
+  --af-line: rgba(255, 255, 255, .12);
+  --af-sans: "PingFang SC", "苹方-简", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --af-mono: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono",
+    "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", monospace;
+  background: radial-gradient(ellipse at 50% 0%, rgba(25, 55, 255, .16), transparent 62%), #060A24;
+  border: 1px solid var(--af-line);
+  border-radius: 14px;
+  padding: 22px 20px;
+  margin: 28px 0 32px;
+  color: #C9CCE0;
+  font-family: var(--af-sans);
+}
+
+/* ---------- HTML parts ---------- */
+
+.aster-fig .head { margin: 0 0 16px; text-align: center; }
+.aster-fig .head .title { margin: 6px 0 0; font-size: 18px; font-weight: 650; color: #FFFFFF; line-height: 1.35; }
+.aster-fig .tag {
+  font-family: var(--af-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9A9DB0;
+}
+.aster-fig .tag:lang(zh) { letter-spacing: .04em; }
+.aster-fig figcaption { margin: 14px 0 0; font-size: 13px; line-height: 1.55; color: #7F86A8; text-align: center; }
+
+/* Side-by-side comparison: two or three columns, one of them may be the .win. */
+.aster-fig .cmp { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 14px; }
+.aster-fig .cmp .col {
+  background: rgba(255, 255, 255, .025); border: 1px solid var(--af-line); border-radius: 12px; padding: 14px 12px 10px;
+}
+.aster-fig .cmp .col.win {
+  border-color: rgba(0, 247, 255, .42);
+  background: linear-gradient(170deg, rgba(0, 247, 255, .08), rgba(25, 55, 255, .05));
+  box-shadow: 0 0 40px rgba(0, 247, 255, .10);
+}
+.aster-fig .col.win .tag { color: var(--af-cyan); }
+.aster-fig .name { margin: 4px 0 10px; font-size: 15px; font-weight: 650; color: #FFFFFF; }
+
+/* Stat callouts: a row of big numbers. */
+.aster-fig .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; text-align: center; }
+.aster-fig .stat { border: 1px solid var(--af-line); border-radius: 12px; padding: 14px 10px; background: rgba(255, 255, 255, .025); }
+.aster-fig .stat .num { font-family: var(--af-mono); font-size: 30px; font-weight: 600; color: #FFFFFF; line-height: 1.2; }
+.aster-fig .stat.o { border-color: rgba(0, 247, 255, .42); }
+.aster-fig .stat.o .num { color: var(--af-cyan); }
+.aster-fig .stat .what { margin-top: 6px; font-size: 12.5px; line-height: 1.45; color: #9AA0BE; }
+.aster-fig .stats + *, .aster-fig * + .stats { margin-top: 18px; }
+
+/* ---------- SVG canvases ----------
+ * .d       wide desktop drawing, viewBox width 860; always paired with an .m
+ * .m       mobile drawing of the same figure, viewBox width 320
+ * .narrow  one drawing for every screen, viewBox width 320
+ * (none)   a panel inside a .cmp column, viewBox width 300
+ */
+.aster-fig svg { display: block; width: 100%; height: auto; font-family: var(--af-mono); font-size: 13px; }
+.aster-fig svg.narrow { max-width: 440px; margin: 0 auto; }
+.aster-fig svg.m { display: none; }
+
+@media (max-width: 768px) {
+  .aster-fig { padding: 16px 14px; margin: 22px 0 26px; }
+  .aster-fig .head .title { font-size: 16px; }
+  .aster-fig .cmp { grid-template-columns: 1fr; }
+  .aster-fig svg.d { display: none; }
+  .aster-fig svg.m { display: block; }
+  .aster-fig .stats { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; }
+  .aster-fig .stat { padding: 12px 8px; }
+  .aster-fig .stat .num { font-size: 26px; }
+}
+
+/* ---------- SVG shapes: boxes ----------
+ * An unclassed rect / circle / ellipse / polygon is a neutral box. */
+.aster-fig svg :is(rect, circle, ellipse, polygon) { fill: rgba(255, 255, 255, .06); stroke: rgba(255, 255, 255, .16); stroke-width: 1; }
+.aster-fig svg :is(.base, .base > *)   { fill: rgba(255, 255, 255, .03);  stroke: rgba(255, 255, 255, .12); }  /* hardware, a foundation strip */
+.aster-fig svg :is(.region, .region > *) { fill: rgba(255, 255, 255, .025); stroke: rgba(255, 255, 255, .12); }  /* a large area that holds boxes */
+.aster-fig svg :is(.inset, .inset > *)  { fill: rgba(6, 10, 36, .55);      stroke: rgba(255, 255, 255, .12); }  /* a box nested in a box */
+.aster-fig svg :is(.muted, .muted > *)  { fill: rgba(127, 129, 140, .14);  stroke: rgba(255, 255, 255, .2); }   /* a competitor's extra layer */
+.aster-fig svg :is(.tint, .tint > *)   { fill: rgba(255, 255, 255, .06);  stroke: rgba(0, 247, 255, .30); }    /* neutral thing that belongs to ours */
+.aster-fig svg :is(.o, .o > *)      { fill: rgba(25, 55, 255, .22);    stroke: rgba(0, 247, 255, .5); }     /* ours */
+.aster-fig svg :is(.o.hi, .o.hi > *)   { stroke: rgba(0, 247, 255, .55); }  /* ours, emphasized: style="fill:url(#<id>-g)" */
+.aster-fig svg :is(.o-region, .o-region > *) { fill: rgba(0, 247, 255, .04); stroke: rgba(0, 247, 255, .42); }    /* an area that is ours */
+.aster-fig svg :is(.risk, .risk > *)   { fill: rgba(255, 92, 122, .10);   stroke: rgba(255, 92, 122, .45); }
+.aster-fig svg :is(.cost, .cost > *)   { fill: rgba(255, 176, 32, .12);   stroke: rgba(255, 176, 32, .5); }
+
+/* Gradient stops for .o.hi, inside a per-SVG <linearGradient>. */
+.aster-fig svg :is(.g0, .g0 > *) { stop-color: #00F7FF; stop-opacity: .22; }
+.aster-fig svg :is(.g1, .g1 > *) { stop-color: #1937FF; stop-opacity: .22; }
+
+/* ---------- SVG shapes: lines and arrows ----------
+ * An unclassed path / line / polyline is a neutral connector. */
+.aster-fig svg :is(path, line, polyline) { fill: none; stroke: #9AA0BE; stroke-width: 1.2; }
+.aster-fig svg :is(.lo, .lo > *)   { stroke: #00F7FF; stroke-width: 1.4; }               /* our path */
+.aster-fig svg :is(.lr, .lr > *)   { stroke: #FF5C7A; stroke-width: 1.4; }               /* a risky path */
+.aster-fig svg :is(.la, .la > *)   { stroke: #FFB020; stroke-width: 1.4; }               /* a costly path */
+.aster-fig svg :is(.sep, .sep > *)  { stroke: rgba(255, 255, 255, .18); stroke-width: 1; } /* a divider, e.g. user / kernel mode */
+.aster-fig svg :is(.dash, .dash > *) { stroke-dasharray: 4 3; }
+/* Arrowheads: the path inside a <marker>. */
+.aster-fig svg :is(.mk, .mk > *)   { fill: #9AA0BE; stroke: none; }
+.aster-fig svg :is(.mk.o, .mk.o > *) { fill: #00F7FF; }
+.aster-fig svg :is(.mk.r, .mk.r > *) { fill: #FF5C7A; }
+.aster-fig svg :is(.mk.a, .mk.a > *) { fill: #FFB020; }
+
+/* ---------- SVG charts ---------- */
+.aster-fig svg :is(.bar, .bar > *)    { fill: rgba(255, 255, 255, .16); stroke: none; }
+.aster-fig svg :is(.bar.o, .bar.o > *)  { fill: rgba(0, 247, 255, .55); }
+.aster-fig svg :is(.bar.r, .bar.r > *)  { fill: rgba(255, 92, 122, .5); }
+.aster-fig svg :is(.bar.a, .bar.a > *)  { fill: rgba(255, 176, 32, .5); }
+.aster-fig svg :is(.axis, .axis > *)   { stroke: rgba(255, 255, 255, .28); stroke-width: 1; }
+.aster-fig svg :is(.grid, .grid > *)   { stroke: rgba(255, 255, 255, .07); stroke-width: 1; }
+
+/* ---------- SVG text ----------
+ * Text takes its color by inheritance, so a class works on a <text> or on a <g> of texts.
+ * Unclassed text is body text. */
+.aster-fig svg { fill: #C9CCE0; stroke: none; }
+.aster-fig svg .lbl  { fill: #9AA0BE; }  /* the name in a neutral box */
+.aster-fig svg .ot   { fill: #8FF6FC; }  /* text in an ours box */
+.aster-fig svg .oh   { fill: #00F7FF; }  /* ours, emphasized: a heading or a key phrase */
+.aster-fig svg .note { fill: #5C93A8; }  /* an annotation: an edge label, a detail under a name */
+.aster-fig svg .faint { fill: #6A6F8C; } /* secondary: hardware, a footnote */
+.aster-fig svg .ghost { fill: #4C5170; } /* tertiary: mode labels on a divider */
+.aster-fig svg .rt   { fill: #FF8FA3; }  /* text about risk */
+.aster-fig svg .rn   { fill: #A86A7C; }  /* an annotation in a risk box */
+.aster-fig svg .at   { fill: #FFC65C; }  /* text about cost */
+.aster-fig svg .wt   { fill: #FFFFFF; }  /* a number that must stand out */
+.aster-fig svg .cap  { fill: #9A9DB0; letter-spacing: 1.2px; }  /* an uppercase heading inside a drawing */
+.aster-fig svg .cap.oh { fill: #00F7FF; }
+.aster-fig svg .b    { font-weight: 600; }
+.aster-fig svg .mid  { text-anchor: middle; }
+.aster-fig svg .end  { text-anchor: end; }

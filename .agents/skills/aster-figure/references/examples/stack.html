@@ -1,0 +1,60 @@
+<figure class="aster-fig" id="fig-kernelets-in-linux">
+<div class="head">
+<div class="tag">The near-term target</div>
+<div class="title">Kernelets in Linux: nothing replaced, something added</div>
+</div>
+<svg class="d" viewBox="0 0 860 346" role="img" aria-label="One machine running one Linux kernel. Above it, on the left, today's workloads continue unchanged on Linux's own subsystems. On the right, selected tenants each get a kernelet, a safe-Rust kernel of their own, which lives inside the same Linux kernel and is managed by the endovisor, one loadable module. Both halves sit on the same hardware.">
+<defs>
+<linearGradient id="kernelets-in-linux-dg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" class="g0"/><stop offset="100%" class="g1"/></linearGradient>
+</defs>
+<text class="cap faint" x="24" y="16" font-size="12">TODAY'S WORKLOADS, UNCHANGED</text>
+<text class="cap oh end" x="836" y="16" font-size="12">TENANTS THAT WANT THEIR OWN KERNEL</text>
+<rect x="24" y="26" width="114" height="32" rx="5"/><rect x="154" y="26" width="114" height="32" rx="5"/><rect x="284" y="26" width="114" height="32" rx="5"/>
+<g class="lbl mid"><text x="81" y="47">app</text><text x="211" y="47">app</text><text x="341" y="47">container</text></g>
+<g class="tint"><rect x="462" y="26" width="114" height="32" rx="5"/><rect x="592" y="26" width="114" height="32" rx="5"/><rect x="722" y="26" width="114" height="32" rx="5"/></g>
+<g class="lbl mid"><text x="519" y="47">agent A</text><text x="649" y="47">agent B</text><text x="779" y="47">agent C</text></g>
+<line class="sep dash" x1="16" y1="74" x2="844" y2="74"/>
+<text class="ghost" x="16" y="69" font-size="12">user mode</text>
+<text class="ghost" x="16" y="88" font-size="12">kernel mode</text>
+<rect class="region" x="16" y="96" width="828" height="174" rx="10"/>
+<rect x="36" y="114" width="362" height="110" rx="6"/>
+<text class="lbl mid" x="217" y="164">Linux's own subsystems</text>
+<text class="faint mid" x="217" y="186" font-size="12">patched: one small gate</text>
+<g class="o hi"><rect x="462" y="114" width="114" height="64" rx="6" style="fill:url(#kernelets-in-linux-dg)"/><rect x="592" y="114" width="114" height="64" rx="6" style="fill:url(#kernelets-in-linux-dg)"/><rect x="722" y="114" width="114" height="64" rx="6" style="fill:url(#kernelets-in-linux-dg)"/></g>
+<g class="ot mid"><text x="519" y="141">Kernelet A</text><text x="649" y="141">Kernelet B</text><text x="779" y="141">Kernelet C</text></g>
+<g class="note mid" font-size="12"><text x="519" y="161">safe Rust</text><text x="649" y="161">safe Rust</text><text x="779" y="161">safe Rust</text></g>
+<rect class="o" x="462" y="192" width="374" height="32" rx="5"/>
+<text class="oh mid" x="649" y="213">endovisor: one loadable module</text>
+<text class="cap mid" x="430" y="254" font-size="12">the Linux kernel the operator already runs, already patches, already trusts</text>
+<rect class="base" x="16" y="282" width="828" height="30" rx="5"/>
+<text class="faint mid" x="430" y="302" font-size="12">hardware</text>
+<text class="faint mid" x="430" y="336" font-size="12">same machine · same kernel · no hypervisor · adopt one workload at a time</text>
+</svg>
+<svg class="m" viewBox="0 0 320 376" role="img" aria-label="One machine running one Linux kernel. On the left, today's apps and containers continue unchanged on Linux's own subsystems. On the right, agents A, B and C each get a kernelet, a safe-Rust kernel of their own, inside the same Linux kernel and managed by the endovisor, one loadable module. Both sides sit on the same hardware.">
+<defs>
+<linearGradient id="kernelets-in-linux-mg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" class="g0"/><stop offset="100%" class="g1"/></linearGradient>
+</defs>
+<text class="cap faint" x="10" y="14" font-size="12">UNCHANGED</text>
+<text class="cap oh end" x="310" y="14" font-size="12">OWN KERNEL</text>
+<rect x="10" y="22" width="140" height="28" rx="5"/>
+<text class="lbl mid" x="80" y="41" font-size="12">apps, containers</text>
+<rect class="tint" x="170" y="22" width="140" height="28" rx="5"/>
+<text class="lbl mid" x="240" y="41" font-size="12">agents A · B · C</text>
+<line class="sep dash" x1="4" y1="66" x2="316" y2="66"/>
+<text class="ghost" x="6" y="62" font-size="12">user mode</text>
+<text class="ghost" x="6" y="80" font-size="12">kernel mode</text>
+<rect class="region" x="4" y="88" width="312" height="206" rx="10"/>
+<rect x="14" y="104" width="136" height="136" rx="6"/>
+<g class="lbl mid" font-size="12"><text x="82" y="152">Linux's own</text><text x="82" y="168">subsystems</text></g>
+<g class="faint mid" font-size="12"><text x="82" y="194">patched: one</text><text x="82" y="210">small gate</text></g>
+<g class="o hi"><rect x="170" y="104" width="136" height="26" rx="5" style="fill:url(#kernelets-in-linux-mg)"/><rect x="170" y="136" width="136" height="26" rx="5" style="fill:url(#kernelets-in-linux-mg)"/><rect x="170" y="168" width="136" height="26" rx="5" style="fill:url(#kernelets-in-linux-mg)"/></g>
+<g class="ot mid" font-size="12"><text x="238" y="121">Kernelet A</text><text x="238" y="153">Kernelet B</text><text x="238" y="185">Kernelet C</text></g>
+<rect class="o" x="170" y="200" width="136" height="40" rx="5"/>
+<g class="oh mid" font-size="12"><text x="238" y="217">endovisor:</text><text x="238" y="232">one module</text></g>
+<g class="cap mid" font-size="12"><text x="160" y="264">the Linux kernel the operator</text><text x="160" y="280">already runs and trusts</text></g>
+<rect class="base" x="4" y="304" width="312" height="28" rx="5"/>
+<text class="faint mid" x="160" y="323" font-size="12">hardware</text>
+<g class="faint mid" font-size="12"><text x="160" y="352">same machine · same kernel</text><text x="160" y="368">no hypervisor · one at a time</text></g>
+</svg>
+<figcaption>Kernelets do not replace Linux. They are added to the kernel the operator already runs, one workload at a time.</figcaption>
+</figure>
