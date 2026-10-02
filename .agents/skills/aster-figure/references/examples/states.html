@@ -1,0 +1,45 @@
+<figure class="aster-fig" id="fig-lifecycle">
+<div class="head">
+<div class="tag">Life cycle</div>
+<div class="title">Six states, one direction</div>
+</div>
+<svg class="d" viewBox="0 0 860 140" role="img" aria-label="A kernelet is Created, becomes Running when its sandbox file is executed, becomes Dying on a stop, a kill, a fault or a lost carrier, becomes Exited when every task of the sandbox is gone, becomes Destroying on DESTROY, and becomes Destroyed when everything has been returned. A kill before start goes from Created straight to Exited.">
+<defs>
+<marker id="lifecycle-da" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk o" d="M0 0 L8 4 L0 8 z"/></marker>
+<marker id="lifecycle-dg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0 0 L8 4 L0 8 z"/></marker>
+</defs>
+<g class="o"><rect x="25" y="56" width="110" height="40" rx="6"/><rect x="165" y="56" width="110" height="40" rx="6"/><rect x="305" y="56" width="110" height="40" rx="6"/><rect x="445" y="56" width="110" height="40" rx="6"/><rect x="585" y="56" width="110" height="40" rx="6"/></g>
+<rect x="725" y="56" width="110" height="40" rx="6"/>
+<g class="ot mid"><text x="80" y="80">Created</text><text x="220" y="80">Running</text><text x="360" y="80">Dying</text><text x="500" y="80">Exited</text><text x="640" y="80">Destroying</text></g>
+<text class="lbl mid" x="780" y="80">Destroyed</text>
+<g class="lo"><path d="M135 76 H163" marker-end="url(#lifecycle-da)"/><path d="M275 76 H303" marker-end="url(#lifecycle-da)"/><path d="M415 76 H443" marker-end="url(#lifecycle-da)"/><path d="M555 76 H583" marker-end="url(#lifecycle-da)"/><path d="M695 76 H723" marker-end="url(#lifecycle-da)"/></g>
+<path class="dash" d="M80 56 V28 H500 V54" marker-end="url(#lifecycle-dg)"/>
+<text class="lbl mid" x="290" y="22" font-size="12">kill before start</text>
+<g class="note mid" font-size="12">
+<text x="150" y="116">exec of the</text><text x="150" y="131">sandbox file</text>
+<text x="290" y="116">stop, kill, fault,</text><text x="290" y="131">carrier lost</text>
+<text x="430" y="116">every task of the</text><text x="430" y="131">sandbox gone</text>
+<text x="570" y="48">DESTROY</text><text x="710" y="48">all returned</text>
+</g>
+</svg>
+<svg class="m" viewBox="0 0 320 432" role="img" aria-label="A kernelet is Created, becomes Running when its sandbox file is executed, becomes Dying on a stop, a kill, a fault or a lost carrier, becomes Exited when every task of the sandbox is gone, becomes Destroying on DESTROY, and becomes Destroyed when everything has been returned. A kill before start goes from Created straight to Exited.">
+<defs>
+<marker id="lifecycle-ma" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk o" d="M0 0 L8 4 L0 8 z"/></marker>
+<marker id="lifecycle-mg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0 0 L8 4 L0 8 z"/></marker>
+</defs>
+<g class="o"><rect x="20" y="16" width="140" height="34" rx="6"/><rect x="20" y="90" width="140" height="34" rx="6"/><rect x="20" y="164" width="140" height="34" rx="6"/><rect x="20" y="238" width="140" height="34" rx="6"/><rect x="20" y="312" width="140" height="34" rx="6"/></g>
+<rect x="20" y="386" width="140" height="34" rx="6"/>
+<g class="ot mid"><text x="90" y="37">Created</text><text x="90" y="111">Running</text><text x="90" y="185">Dying</text><text x="90" y="259">Exited</text><text x="90" y="333">Destroying</text></g>
+<text class="lbl mid" x="90" y="407">Destroyed</text>
+<g class="lo"><path d="M90 50 V88" marker-end="url(#lifecycle-ma)"/><path d="M90 124 V162" marker-end="url(#lifecycle-ma)"/><path d="M90 198 V236" marker-end="url(#lifecycle-ma)"/><path d="M90 272 V310" marker-end="url(#lifecycle-ma)"/><path d="M90 346 V384" marker-end="url(#lifecycle-ma)"/></g>
+<path class="dash" d="M160 33 H300 V255 H162" marker-end="url(#lifecycle-mg)"/>
+<text class="lbl" x="170" y="26" font-size="12">kill before start</text>
+<g class="note" font-size="12">
+<text x="100" y="74">exec of the sandbox file</text>
+<text x="100" y="141">stop, kill, fault,</text><text x="100" y="156">carrier lost</text>
+<text x="100" y="215">every task of the</text><text x="100" y="230">sandbox gone</text>
+<text x="100" y="296">DESTROY</text>
+<text x="100" y="370">all returned</text>
+</g>
+</svg>
+</figure>

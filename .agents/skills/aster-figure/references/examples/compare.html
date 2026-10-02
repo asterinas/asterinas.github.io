@@ -1,0 +1,64 @@
+<figure class="aster-fig" id="fig-agent-isolation">
+<div class="head">
+<div class="tag">Three ways to give an agent a computer</div>
+<div class="title">Kernelets: speed of containers, security of microVMs</div>
+</div>
+<div class="cmp">
+<div class="col">
+<div class="tag">Option A</div>
+<div class="name">Containers</div>
+<svg viewBox="0 0 300 196" role="img" aria-label="Containers: three agents share one Linux kernel of about thirty million lines of C, which exposes its full system call surface to all of them.">
+<g font-size="13">
+<rect x="14" y="12" width="80" height="40" rx="6"/><rect x="110" y="12" width="80" height="40" rx="6"/><rect x="206" y="12" width="80" height="40" rx="6"/>
+<g class="lbl mid"><text x="54" y="36">agent A</text><text x="150" y="36">agent B</text><text x="246" y="36">agent C</text></g>
+<path class="lr dash" d="M54 52 v22 M150 52 v22 M246 52 v22"/>
+<rect class="risk" x="14" y="76" width="272" height="72" rx="8"/>
+<text class="rt mid" x="150" y="106" font-size="13">ONE SHARED LINUX KERNEL</text>
+<text class="rn mid" x="150" y="128" font-size="12">~30M LoC C · full syscall surface</text>
+<rect class="base" x="14" y="158" width="272" height="26" rx="5"/>
+<text class="faint mid" x="150" y="175" font-size="12">hardware</text>
+</g>
+</svg>
+</div>
+<div class="col">
+<div class="tag">Option B</div>
+<div class="name">microVMs</div>
+<svg viewBox="0 0 300 196" role="img" aria-label="microVMs: each agent gets its own guest kernel, and every guest sits behind hardware nesting (EPT, VM exits, vCPU scheduling) on a host kernel and a virtual machine monitor.">
+<g font-size="13">
+<rect x="14" y="12" width="80" height="26" rx="5"/><rect x="110" y="12" width="80" height="26" rx="5"/><rect x="206" y="12" width="80" height="26" rx="5"/>
+<g class="lbl mid"><text x="54" y="29">agent A</text><text x="150" y="29">agent B</text><text x="246" y="29">agent C</text></g>
+<rect class="muted" x="14" y="44" width="80" height="26" rx="5"/><rect class="muted" x="110" y="44" width="80" height="26" rx="5"/><rect class="muted" x="206" y="44" width="80" height="26" rx="5"/>
+<g class="mid"><text x="54" y="61" font-size="12">guest OS</text><text x="150" y="61" font-size="12">guest OS</text><text x="246" y="61" font-size="12">guest OS</text></g>
+<rect class="cost" x="14" y="80" width="272" height="24" rx="4"/>
+<text class="at mid" x="150" y="96" font-size="12">EPT · VM EXIT · vCPU SCHEDULING</text>
+<rect x="14" y="112" width="272" height="36" rx="7"/>
+<text class="lbl mid" x="150" y="134">host kernel + VMM</text>
+<rect class="base" x="14" y="158" width="272" height="26" rx="5"/>
+<text class="faint mid" x="150" y="175" font-size="12">hardware</text>
+</g>
+</svg>
+</div>
+<div class="col win">
+<div class="tag">Option C</div>
+<div class="name">Asterinas Kernelets</div>
+<svg viewBox="0 0 300 196" role="img" aria-label="Asterinas kernelets: each agent gets a safe-Rust kernel instance of its own, side by side over OSTD, a small, sound and partly proven core, with no hypervisor, no EPT and no VM exit.">
+<defs>
+<linearGradient id="agent-isolation-g" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" class="g0"/><stop offset="100%" class="g1"/></linearGradient>
+</defs>
+<g font-size="13">
+<rect x="14" y="12" width="80" height="26" rx="5"/><rect x="110" y="12" width="80" height="26" rx="5"/><rect x="206" y="12" width="80" height="26" rx="5"/>
+<g class="lbl mid"><text x="54" y="29">agent A</text><text x="150" y="29">agent B</text><text x="246" y="29">agent C</text></g>
+<g class="o hi"><rect x="14" y="44" width="80" height="54" rx="6" style="fill:url(#agent-isolation-g)"/><rect x="110" y="44" width="80" height="54" rx="6" style="fill:url(#agent-isolation-g)"/><rect x="206" y="44" width="80" height="54" rx="6" style="fill:url(#agent-isolation-g)"/></g>
+<g class="ot mid" font-size="12"><text x="54" y="68">Kernelet A</text><text x="150" y="68">Kernelet B</text><text x="246" y="68">Kernelet C</text></g>
+<g class="note mid" font-size="12"><text x="54" y="86">safe Rust</text><text x="150" y="86">safe Rust</text><text x="246" y="86">safe Rust</text></g>
+<rect class="o" x="14" y="106" width="272" height="26" rx="5"/>
+<text class="oh mid" x="150" y="123" font-size="12">OSTD: small, sound, partly proven</text>
+<text class="faint mid" x="150" y="150" font-size="12">no hypervisor · no EPT · no VM exit</text>
+<rect class="base" x="14" y="158" width="272" height="26" rx="5"/>
+<text class="faint mid" x="150" y="175" font-size="12">hardware</text>
+</g>
+</svg>
+</div>
+</div>
+<figcaption>Containers share one large kernel; microVMs buy isolation with a second kernel and hardware nesting; kernelets give each agent its own safe-Rust kernel without either cost.</figcaption>
+</figure>
