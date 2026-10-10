@@ -832,3 +832,13 @@ p img {
     height: 100%;
     border: 0; /* Ensures no extra border from the iframe */
 }
+
+/* A self-hosted demo video, scaled to the column width at its own aspect ratio. */
+.post-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 1.5em;
+    border-radius: 8px;
+    background: #000;
+}
